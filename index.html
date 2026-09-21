@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LENTERA 6 - Etalase Belajar & Portofolio Kelas VI</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f4f7f6; color: #333; line-height: 1.6; }
+        
+        /* Header & Navigasi */
+        header { background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; text-align: center; padding: 2rem 1rem; }
+        header h1 { font-size: 2.2rem; margin-bottom: 0.5rem; }
+        header p { font-size: 1rem; opacity: 0.9; }
+        nav { background: #0f2027; display: flex; justify-content: center; flex-wrap: wrap; }
+        nav a { color: white; padding: 14px 20px; text-decoration: none; text-align: center; font-weight: 500; }
+        nav a:hover { background: #203a43; }
+
+        /* Kontainer Utama */
+        .container { max-width: 1100px; margin: 20px auto; padding: 0 15px; }
+        .card { background: white; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .card h2 { color: #1e3c72; border-bottom: 2px solid #eef2f5; padding-bottom: 8px; margin-bottom: 15px; }
+
+        /* Grid Karya Kelompok */
+        .grid-karya { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .karya-item { border: 1px solid #e1e8ed; border-radius: 8px; overflow: hidden; background: #fff; }
+        .karya-item img { width: 100%; height: 180px; object-fit: cover; }
+        .karya-content { padding: 15px; }
+        .karya-content h3 { color: #2a5298; margin-bottom: 8px; font-size: 1.1rem; }
+        .badge { display: inline-block; background: #e3f2fd; color: #1565c0; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-bottom: 8px; }
+        .btn-baca { display: inline-block; margin-top: 10px; padding: 8px 15px; background: #2a5298; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem; }
+        .btn-baca:hover { background: #1e3c72; }
+
+        /* Footer */
+        footer { text-align: center; padding: 20px; background: #0f2027; color: white; font-size: 0.9rem; margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>LENTERA 6</h1>
+        <p>Laporan & Etalase Belajar Anak Kelas VI SD</p>
+        <p style="font-size: 0.85rem; margin-top: 5px;">Model HORAS • Pembelajaran Mendalam • Zero-Cost Digital Ecosystem</p>
+    </header>
+
+    <nav>
+        <a href="#beranda">Beranda</a>
+        <a href="#proyek-mbg">Proyek Sampah MBG</a>
+        <a href="#galeri-kelas">Galeri Portofolio</a>
+        <a href="#apresiasi">Ruang Orang Tua</a>
+    </nav>
+
+    <div class="container">
+        
+        <!-- Sekilas tentang Platform -->
+        <section id="beranda" class="card">
+            <h2>Selamat Datang di LENTERA 6</h2>
+            <p>Platform digital ini menghadirkan transparansi proses dan hasil belajar murid Kelas VI. Melalui model pembelajaran <strong>HORAS</strong>, murid diolah nalar kritisnya untuk mengubah sampah program Makan Bergizi Gratis (MBG) menjadi inovasi energi terbarukan dan karya literasi teks eksplanasi.</p>
+        </section>
+
+        <!-- Etalase 6 Kelompok MBG -->
+        <section id="proyek-mbg" class="card">
+            <h2>Etalase Inovasi Pengolahan Sampah MBG</h2>
+            <p style="margin-bottom: 15px;">Klik tombol di bawah untuk membaca artikel Teks Eksplanasi dan melihat dokumentasi eksperimen karya murid:</p>
+            
+            <div class="grid-karya">
+                
+                <!-- Kelompok 1 -->
+                <div class="karya-item">
+                    <img src="https://via.placeholder.com/400x200?text=Bio-Baterai+MBG" alt="Bio Baterai">
+                    <div class="karya-content">
+                        <span class="badge">Kelompok 1</span>
+                        <h3>Bio-Baterai Kulit Buah MBG</h3>
+                        <p>Mengubah asam dari sisa kulit jeruk/pisang MBG menjadi arus listrik untuk menyalakan LED.</p>
+                        <a href="kelompok1.html" class="btn-baca">Lihat Karya & Teks Eksplanasi →</a>
+                    </div>
+                </div>
+
+                <!-- Kelompok 2 -->
+                <div class="karya-item">
+                    <img src="https://via.placeholder.com/400x200?text=Kertas+Daur+Ulang" alt="Kertas Daur Ulang">
+                    <div class="karya-content">
+                        <span class="badge">Kelompok 2</span>
+                        <h3>Kertas Daur Ulang Serat Buah</h3>
+                        <p>Mengolah ampas buah MBG dan kertas bekas menjadi lembaran kertas media tulis ramah lingkungan.</p>
+                        <a href="kelompok2.html" class="btn-baca">Lihat Karya & Teks Eksplanasi →</a>
+                    </div>
+                </div>
+
+                <!-- Kelompok 3 -->
+                <div class="karya-item">
+                    <img src="https://via.placeholder.com/400x200?text=Biogas+Mini" alt="Biogas Mini">
+                    <div class="karya-content">
+                        <span class="badge">Kelompok 3</span>
+                        <h3>Biogas Mini Fermentasi Buah</h3>
+                        <p>Simulator fermentasi galon untuk menangkap gas metana dari sisa buah busuk MBG.</p>
+                        <a href="kelompok3.html" class="btn-baca">Lihat Karya & Teks Eksplanasi →</a>
+                    </div>
+                </div>
+
+                <!-- Kelompok 4 -->
+                <div class="karya-item">
+                    <img src="https://via.placeholder.com/400x200?text=Tinta+Organik" alt="Tinta Organik">
+                    <div class="karya-content">
+                        <span class="badge">Kelompok 4</span>
+                        <h3>Cat Lukis & Tinta Organik</h3>
+                        <p>Ekstraksi pigmen warna alami dari kulit buah naga dan bit MBG untuk pewarna lukis.</p>
+                        <a href="kelompok4.html" class="btn-baca">Lihat Karya & Teks Eksplanasi →</a>
+                    </div>
+                </div>
+
+                <!-- Kelompok 5 -->
+                <div class="karya-item">
+                    <img src="https://via.placeholder.com/400x200?text=Briket+Biji+Buah" alt="Briket Bio-Energi">
+                    <div class="karya-content">
+                        <span class="badge">Kelompok 5</span>
+                        <h3>Briket Bio-Energi Biji Buah</h3>
+                        <p>Memanfaatkan biji buah kering MBG yang dipadatkan sebagai energi padat alternatif.</p>
+                        <a href="kelompok5.html" class="btn-baca">Lihat Karya & Teks Eksplanasi →</a>
+                    </div>
+                </div>
+
+                <!-- Kelompok 6 -->
+                <div class="karya-item">
+                    <img src="https://via.placeholder.com/400x200?text=Pestisida+Organik" alt="Pestisida Organik">
+                    <div class="karya-content">
+                        <span class="badge">Kelompok 6</span>
+                        <h3>Pestisida Organik Cair</h3>
+                        <p>Merendam sisa kulit bawang & bumbu MBG untuk pengusir hama tanaman sekolah.</p>
+                        <a href="kelompok6.html" class="btn-baca">Lihat Karya & Teks Eksplanasi →</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Ruang Umpan Balik Orang Tua -->
+        <section id="apresiasi" class="card">
+            <h2>Ruang Apresiasi Orang Tua</h2>
+            <p>Bapak/Ibu Orang Tua Murid dapat memberikan saran, kesan, dan apresiasi atas karya anak-anak melalui kolom di bawah ini:</p>
+            <br>
+            <p style="font-style: italic; color: #666;">(Kolom tanggapan orang tua aktif terhubung dengan WA Gateway LENTERA 6)</p>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 LENTERA 6 — Dikembangkan untuk Apresiasi GTK Transformatif 2026</p>
+    </footer>
+
+</body>
+</html>
