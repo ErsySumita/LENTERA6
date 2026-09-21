@@ -26,15 +26,57 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: #f4f7f6; color: #333; line-height: 1.6; }
         
-        /* Gambar Banner Header Atas */
-        .banner-header { width: 100%; max-height: 250px; overflow: hidden; background: #1e3c72; text-align: center; }
-        .banner-header img { width: 100%; height: auto; max-height: 250px; object-fit: cover; display: block; }
+        /* HEADER MODERN OPS 1 (Logo Samping Judul) */
+        .header-modern {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 20px 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
 
-        /* Header & Banner Sekolah */
-        header { background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; text-align: center; padding: 1.8rem 1rem 1.2rem 1rem; }
-        header h1 { font-size: 2.2rem; margin-bottom: 0.3rem; letter-spacing: 1px; }
-        header p { font-size: 1rem; opacity: 0.95; }
-        .sub-header { background: #0f2027; color: #e0e0e0; text-align: center; padding: 8px; font-size: 0.85rem; }
+        .header-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .logo-img {
+            height: 90px;
+            width: 90px;
+            object-fit: cover;
+            border-radius: 50%;
+            background: white;
+            padding: 3px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .header-text {
+            text-align: left;
+        }
+
+        .header-text h1 {
+            font-size: 2.2rem;
+            line-height: 1.1;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .header-text p {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        .sub-header { 
+            background: #0f2027; 
+            color: #e0e0e0; 
+            text-align: center; 
+            padding: 8px; 
+            font-size: 0.85rem; 
+        }
 
         /* Navigasi Utama (3 TAB) */
         nav { background: #1a252f; display: flex; justify-content: center; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; }
@@ -90,19 +132,39 @@
 
         /* Footer */
         footer { text-align: center; padding: 20px; background: #0f2027; color: white; font-size: 0.85rem; margin-top: 40px; }
+
+        /* Responsif Layar HP */
+        @media (max-width: 600px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .header-text {
+                text-align: center;
+            }
+            .logo-img {
+                height: 80px;
+                width: 80px;
+            }
+            .header-text h1 {
+                font-size: 1.8rem;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <!-- GAMBAR BANNER HEADER UTAMA -->
-    <div class="banner-header">
-        <img src="logo.jpg" alt="Banner LENTERA 6 SDN 024184 Binjai">
-    </div>
-
-    <header>
-        <h1>LENTERA 6</h1>
-        <p>Laporan & Etalase Belajar Anak Kelas VI A</p>
+    <!-- HEADER MODERN DENGAN LOGO SAMPING -->
+    <header class="header-modern">
+        <div class="header-container">
+            <img src="logo.jpg" alt="Logo LENTERA 6" class="logo-img">
+            <div class="header-text">
+                <h1>LENTERA 6</h1>
+                <p>Laporan & Etalase Belajar Anak Kelas VI A</p>
+            </div>
+        </div>
     </header>
+    
     <div class="sub-header">
         SD Negeri 024184 Binjai • Ekosistem Portofolio & Transparansi Hasil Belajar Murid
     </div>
