@@ -41,21 +41,29 @@
         .sub-content { display: none; }
         .sub-content.active-sub { display: block; }
 
-        /* Container Video Shorts vertical aspect ratio */
-        .video-shorts-wrapper { position: relative; width: 100%; max-width: 320px; height: 560px; margin: 15px auto; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.15); }
-        .video-shorts-wrapper iframe { position: absolute; top:0; left: 0; width: 100%; height: 100%; border: none; }
+        /* Container Pemutar Video Universal */
+        .video-container { position: relative; width: 100%; max-width: 360px; height: 500px; margin: 15px auto; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.15); background: #000; }
+        .video-container iframe { position: absolute; top:0; left: 0; width: 100%; height: 100%; border: none; }
+
+        /* Grid Galeri Foto */
+        .grid-foto { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 15px; }
+        .foto-item { border: 1px solid #e1e8ed; border-radius: 8px; overflow: hidden; background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .foto-item img { width: 100%; height: 230px; object-fit: cover; }
+        .foto-caption { padding: 12px; font-size: 0.9rem; color: #333; text-align: center; font-weight: 600; }
+
+        /* Deskripsi Pembelajaran */
+        .deskripsi-belajar { background: #f0f4f8; border-left: 4px solid #2a5298; padding: 12px 15px; margin: 10px 0 15px 0; border-radius: 0 6px 6px 0; font-size: 0.95rem; color: #2c3e50; }
 
         /* Badge Tag */
         .badge { display: inline-block; background: #e3f2fd; color: #1565c0; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-bottom: 10px; }
         .badge-star { background: #fff3cd; color: #856404; }
 
-        /* Form Komentar per Karya */
+        /* Form Komentar */
         .comment-section { background: #f8fafc; border-top: 2px dashed #cbd5e1; padding: 15px; margin-top: 15px; border-radius: 0 0 8px 8px; }
         .comment-section h4 { color: #1e3c72; font-size: 0.95rem; margin-bottom: 10px; }
         .form-group { margin-bottom: 10px; }
         .form-group input, .form-group textarea { width: 100%; padding: 8px 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 0.9rem; }
         .btn-kirim { background: #27ae60; color: white; border: none; padding: 8px 16px; border-radius: 5px; font-weight: bold; cursor: pointer; font-size: 0.85rem; }
-        .btn-kirim:hover { background: #219150; }
 
         /* Footer */
         footer { text-align: center; padding: 20px; background: #0f2027; color: white; font-size: 0.85rem; margin-top: 40px; }
@@ -75,7 +83,7 @@
     <nav>
         <button class="tab-btn active" onclick="openTab('beranda')">Beranda</button>
         <button class="tab-btn" onclick="openTab('galeri')">Galeri Portofolio</button>
-        <button class="tab-btn" onclick="openTab('teladan')">Teladan Siswa</button>
+        <button class="tab-btn" onclick="openTab('teladan')">Siswa Teladan</button>
     </nav>
 
     <div class="container">
@@ -99,7 +107,7 @@
                 </div>
                 <div class="info-box">
                     <h4>Kepala Sekolah</h4>
-                    <p>Milayanti, M.Pd.</p>
+                    <p>Milayanti Siregar, M.Pd.</p>
                 </div>
             </div>
 
@@ -121,21 +129,22 @@
                 <button class="sub-btn active-sub" onclick="openSubTab('bind')">🇮🇩 Bahasa Indonesia</button>
                 <button class="sub-btn" onclick="openSubTab('bing')">🇬🇧 Bahasa Inggris</button>
                 <button class="sub-btn" onclick="openSubTab('sains')">🧪 Literasi Sains</button>
-                <button class="sub-btn" onclick="openSubTab('ipas')">🔬 IPAS (2 Karya)</button>
-                <button class="sub-btn" onclick="openSubTab('seni')">🎨 Seni</button>
+                <button class="sub-btn" onclick="openSubTab('ipas')">🔬 IPAS (2 Praktikum)</button>
+                <button class="sub-btn" onclick="openSubTab('seni')">🎨 Seni & Budaya</button>
+                <button class="sub-btn" onclick="openSubTab('foto')">📸 Foto Belajar Kelompok</button>
                 <button class="sub-btn" onclick="openSubTab('mbg')">🌱 Proyek Sampah MBG</button>
             </div>
 
             <!-- SUB-TAB 1: BAHASA INDONESIA -->
             <div id="bind" class="sub-content active-sub">
                 <span class="badge">Bahasa Indonesia</span>
-                <h3>Unjuk Kerja Bahasa Indonesia</h3>
-                <p>Dokumentasi penampilan literasi dan percakapan Bahasa Indonesia siswa Kelas VI A.</p>
-                
-                <div class="video-shorts-wrapper">
-                    <iframe src="https://www.youtube.com/embed/t66kZFYuLn4" allowfullscreen></iframe>
+                <h3>Menganalisis Jenis Cerita Rakyat</h3>
+                <div class="deskripsi-belajar">
+                    Setiap kelompok siswa menyusun potongan cerita lalu menyusun menjadi satu cerita yang utuh. Kemudian menjawab beberapa soal terkait isi cerita. Terakhir, setiap kelompok membacakan isi cerita dan berdiskusi bersama.
                 </div>
-
+                <div class="video-container">
+                    <iframe src="https://www.youtube-nocookie.com/embed/t66kZFYuLn4" allowfullscreen></iframe>
+                </div>
                 <div class="comment-section">
                     <h4>💬 Berikan Umpan Balik / Komentar Orang Tua:</h4>
                     <form onsubmit="kirimKomentar(event)">
@@ -149,13 +158,13 @@
             <!-- SUB-TAB 2: BAHASA INGGRIS -->
             <div id="bing" class="sub-content">
                 <span class="badge">Bahasa Inggris</span>
-                <h3>English Practice & Conversation</h3>
-                <p>Unjuk keberanian dan kelancaran berbicara dalam Bahasa Inggris.</p>
-                
-                <div class="video-shorts-wrapper">
-                    <iframe src="https://www.youtube.com/embed/2CKBrqYw6v8" allowfullscreen></iframe>
+                <h3>Melengkapi Subject dan To Be via Game Interaktif</h3>
+                <div class="deskripsi-belajar">
+                    Melengkapi Subject dan To Be pada sebuah kalimat lewat sebuah game tarik tambang interaktif.
                 </div>
-
+                <div class="video-container">
+                    <iframe src="https://www.youtube-nocookie.com/embed/2CKBrqYw6v8" allowfullscreen></iframe>
+                </div>
                 <div class="comment-section">
                     <h4>💬 Berikan Umpan Balik / Komentar Orang Tua:</h4>
                     <form onsubmit="kirimKomentar(event)">
@@ -169,13 +178,13 @@
             <!-- SUB-TAB 3: LITERASI SAINS -->
             <div id="sains" class="sub-content">
                 <span class="badge">Literasi Sains</span>
-                <h3>Eksplorasi & Literasi Sains</h3>
-                <p>Penyampaian gagasan dan pemahaman fenomena sains oleh siswa.</p>
-                
-                <div class="video-shorts-wrapper">
-                    <iframe src="https://www.youtube.com/embed/i5jJ7VS7Sfc" allowfullscreen></iframe>
+                <h3>Permainan Treasure Hunter (Penjelajahan Kota Respira)</h3>
+                <div class="deskripsi-belajar">
+                    Setiap kelompok memecahkan teka-teki terkait penyakit pada organ pernapasan manusia melalui narasi kisah penjelajahan Kota Respira. Siswa melakukan <em>close reading</em> untuk memecahkan teka-teki tentang jenis penyakit dan kata misteri. Pembelajaran ini juga memanfaatkan aplikasi interaktif yang terbuat dari Gemini Canvas.
                 </div>
-
+                <div class="video-container">
+                    <iframe src="https://www.youtube-nocookie.com/embed/i5jJ7VS7Sfc" allowfullscreen></iframe>
+                </div>
                 <div class="comment-section">
                     <h4>💬 Berikan Umpan Balik / Komentar Orang Tua:</h4>
                     <form onsubmit="kirimKomentar(event)">
@@ -186,16 +195,18 @@
                 </div>
             </div>
 
-            <!-- SUB-TAB 4: IPAS (2 VIDEO) -->
+            <!-- SUB-TAB 4: IPAS (2 PRAKTIKUM) -->
             <div id="ipas" class="sub-content">
                 <span class="badge">IPAS - Praktikum 1</span>
-                <h3>Praktikum IPAS Bagian 1</h3>
-                <div class="video-shorts-wrapper">
-                    <iframe src="https://www.youtube.com/embed/aRej28D0bag" allowfullscreen></iframe>
+                <h3>Model Paru-Paru Manusia dari Bahan Bekas</h3>
+                <div class="deskripsi-belajar">
+                    Praktikum 1 membuat model paru-paru manusia dengan memanfaatkan bahan-bahan bekas di sekitar lingkungan rumah dan sekolah.
                 </div>
-
+                <div class="video-container">
+                    <iframe src="https://www.youtube-nocookie.com/embed/aRej28D0bag" allowfullscreen></iframe>
+                </div>
                 <div class="comment-section">
-                    <h4>💬 Umpan Balik IPAS Bagian 1:</h4>
+                    <h4>💬 Umpan Balik IPAS Praktikum 1:</h4>
                     <form onsubmit="kirimKomentar(event)">
                         <div class="form-group"><input type="text" placeholder="Nama Orang Tua / Wali..." required></div>
                         <div class="form-group"><textarea rows="2" placeholder="Tuliskan apresiasi Anda..." required></textarea></div>
@@ -206,13 +217,15 @@
                 <br><hr><br>
 
                 <span class="badge">IPAS - Praktikum 2</span>
-                <h3>Praktikum IPAS Bagian 2</h3>
-                <div class="video-shorts-wrapper">
-                    <iframe src="https://www.youtube.com/embed/5mK-zKZMuDE" allowfullscreen></iframe>
+                <h3>Bahaya Merokok bagi Kesehatan Paru-Paru</h3>
+                <div class="deskripsi-belajar">
+                    Praktikum 2 tentang bahaya merokok pada kesehatan paru-paru.
                 </div>
-
+                <div class="video-container">
+                    <iframe src="https://www.youtube-nocookie.com/embed/5mK-zKZMuDE" allowfullscreen></iframe>
+                </div>
                 <div class="comment-section">
-                    <h4>💬 Umpan Balik IPAS Bagian 2:</h4>
+                    <h4>💬 Umpan Balik IPAS Praktikum 2:</h4>
                     <form onsubmit="kirimKomentar(event)">
                         <div class="form-group"><input type="text" placeholder="Nama Orang Tua / Wali..." required></div>
                         <div class="form-group"><textarea rows="2" placeholder="Tuliskan apresiasi Anda..." required></textarea></div>
@@ -221,16 +234,16 @@
                 </div>
             </div>
 
-            <!-- SUB-TAB 5: SENI -->
+            <!-- SUB-TAB 5: SENI & BUDAYA -->
             <div id="seni" class="sub-content">
                 <span class="badge">Seni & Budaya</span>
-                <h3>Unjuk Kerja Seni & Kreativitas</h3>
-                <p>Dokumentasi hasil karya seni rupa dan kreasi tangan murid.</p>
-                
-                <div class="video-shorts-wrapper">
-                    <iframe src="https://www.youtube.com/embed/Ax6s-FrYX2Q" allowfullscreen></iframe>
+                <h3>Unjuk Bakat P5 & Seni Kreativitas</h3>
+                <div class="deskripsi-belajar">
+                    Kreativitas siswa dalam berkarya dengan memanfaatkan bahan yang ada. Gerak dan Lagu, Tarian Batak Tradisional, Perkusi dengan ember bekas, dan Tarian Komando dengan memanfaatkan kardus bekas sebagai properti. Unjuk bakat ini wujud nyata semangat P5 yang berkebinekaan global, gotong royong, kreatif, dan peduli lingkungan.
                 </div>
-
+                <div class="video-container">
+                    <iframe src="https://www.youtube-nocookie.com/embed/Ax6s-FrYX2Q" allowfullscreen></iframe>
+                </div>
                 <div class="comment-section">
                     <h4>💬 Berikan Umpan Balik / Komentar Orang Tua:</h4>
                     <form onsubmit="kirimKomentar(event)">
@@ -241,7 +254,48 @@
                 </div>
             </div>
 
-            <!-- SUB-TAB 6: PROYEK MBG -->
+            <!-- SUB-TAB 6: FOTO BELAJAR KELOMPOK -->
+            <div id="foto" class="sub-content">
+                <span class="badge">Galeri Foto</span>
+                <h3>Hasil Karya Model Paru-Paru Manusia</h3>
+                <div class="deskripsi-belajar">
+                    Dokumentasi kekompakan kerja kelompok siswa Kelas VI A saat menyelesaikan dan menampilkan <strong>Hasil Karya Model Paru-Paru Manusia</strong> (Kelompok 6 hingga Kelompok 1 & 2):
+                </div>
+                
+                <div class="grid-foto">
+                    <div class="foto-item">
+                        <img src="KELOMPOK 6.jpeg" alt="Kelompok 6">
+                        <div class="foto-caption">Aktivitas Belajar Kelompok 6</div>
+                    </div>
+                    <div class="foto-item">
+                        <img src="KELOMPOK 5.jpeg" alt="Kelompok 5">
+                        <div class="foto-caption">Aktivitas Belajar Kelompok 5</div>
+                    </div>
+                    <div class="foto-item">
+                        <img src="KELOMPOK 1 DAN 2.jpeg" alt="Kelompok 1 Dan 2">
+                        <div class="foto-caption">Aktivitas Belajar Kelompok 1 & 2</div>
+                    </div>
+                    <div class="foto-item">
+                        <img src="KELOMPOK 4.jpeg" alt="Kelompok 4">
+                        <div class="foto-caption">Aktivitas Belajar Kelompok 4</div>
+                    </div>
+                    <div class="foto-item">
+                        <img src="KEOLOMPOK 3.jpeg" alt="Kelompok 3">
+                        <div class="foto-caption">Aktivitas Belajar Kelompok 3</div>
+                    </div>
+                </div>
+
+                <div class="comment-section">
+                    <h4>💬 Umpan Balik Foto Belajar Kelompok:</h4>
+                    <form onsubmit="kirimKomentar(event)">
+                        <div class="form-group"><input type="text" placeholder="Nama Orang Tua / Wali..." required></div>
+                        <div class="form-group"><textarea rows="2" placeholder="Tuliskan pesan atau apresiasi untuk kerja kelompok siswa..." required></textarea></div>
+                        <button type="submit" class="btn-kirim">Kirim Umpan Balik</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- SUB-TAB 7: PROYEK MBG -->
             <div id="mbg" class="sub-content">
                 <span class="badge">Inovasi MBG</span>
                 <h3>Proyek Pengolahan Sampah MBG (HORAS)</h3>
@@ -251,28 +305,63 @@
         </section>
 
 
-        <!-- ==================== TAB 3: TELADAN SISWA ==================== -->
+        <!-- ==================== TAB 3: SISWA TELADAN ==================== -->
         <section id="teladan" class="tab-content card">
-            <h2>Panggung Teladan Siswa Bulanan</h2>
-            <p style="margin-bottom: 20px;">Apresiasi khusus untuk merayakan kedisiplinan, kreativitas, kepemimpinan, dan pertumbuhan karakter murid Kelas VI A setiap bulannya:</p>
+            <h2>Panggung Teladan Siswa Kelas VI A</h2>
+            <p style="margin-bottom: 20px;">Apresiasi khusus untuk merayakan kedisiplinan, pencapaian akademik, ketakwaan ibadah, dan karakter terpuji murid Kelas VI A:</p>
 
-            <div style="border: 1px solid #e1e8ed; border-radius: 8px; overflow: hidden; background: #fff; margin-bottom: 20px;">
-                <img src="foto-teladan.jpg" alt="Foto Teladan Siswa" style="width: 100%; max-height: 400px; object-fit: cover;" onerror="this.src='https://via.placeholder.com/800x400?text=Upload+Foto+Teladan+Siswa+Di+Sini'">
-                <div style="padding: 20px;">
-                    <span class="badge badge-star">🌟 Teladan Bulan Ini</span>
-                    <h3>Penghargaan Disiplin & Karakter Terpuji</h3>
-                    <p>Selamat kepada murid-murid penerima penghargaan teladan bulan ini atas konsistensi dalam belajar, keaktifan membaca, dan kerja sama yang sangat baik!</p>
+            <div class="grid-foto">
+                
+                <!-- Teladan Akademik -->
+                <div class="foto-item">
+                    <img src="TELADAN AKADEMIK.jpeg" alt="Teladan Akademik">
+                    <div style="padding: 15px;">
+                        <span class="badge badge-star">🏆 Teladan Akademik</span>
+                        <h3>Pencapaian Akademik Terbaik</h3>
+                        <p style="font-size: 0.85rem; color: #555;">Apresiasi atas ketekunan belajar, keaktifan bernalar kritis, dan capaian nilai akademik tertinggi.</p>
+                    </div>
                 </div>
 
-                <!-- Form Komentar Khusus Tab Teladan -->
-                <div class="comment-section">
-                    <h4>💬 Kirim Ucapan Selamat & Apresiasi Orang Tua:</h4>
-                    <form onsubmit="kirimKomentar(event)">
-                        <div class="form-group"><input type="text" placeholder="Nama Orang Tua / Wali..." required></div>
-                        <div class="form-group"><textarea rows="3" placeholder="Tuliskan ucapan selamat atau motivasi untuk siswa teladan..." required></textarea></div>
-                        <button type="submit" class="btn-kirim">Kirim Pesan Apresiasi</button>
-                    </form>
+                <!-- Teladan Ibadah -->
+                <div class="foto-item">
+                    <img src="TELADAN IBADAH.jpeg" alt="Teladan Ibadah">
+                    <div style="padding: 15px;">
+                        <span class="badge badge-star">🌙 Teladan Ibadah</span>
+                        <h3>Ketakwaan & Kedisiplinan Ibadah</h3>
+                        <p style="font-size: 0.85rem; color: #555;">Penghargaan atas kedisiplinan dan kesadaran menjalankan ibadah harian secara konsisten.</p>
+                    </div>
                 </div>
+
+                <!-- Teladan Sikap -->
+                <div class="foto-item">
+                    <img src="TELADAN SIKAP.jpeg" alt="Teladan Sikap">
+                    <div style="padding: 15px;">
+                        <span class="badge badge-star">🌟 Teladan Sikap</span>
+                        <h3>Karakter Terpuji & Kesopanan</h3>
+                        <p style="font-size: 0.85rem; color: #555;">Apresiasi atas kepribadian yang santun, kepedulian antar sesama teman, dan sikap gotong royong.</p>
+                    </div>
+                </div>
+
+                <!-- Kelompok Terbaik -->
+                <div class="foto-item">
+                    <img src="KELOMPOK TERBAIK.jpeg" alt="Kelompok Terbaik">
+                    <div style="padding: 15px;">
+                        <span class="badge badge-star">🥇 Kelompok Terbaik</span>
+                        <h3>Kekompakan & Kerja Sama Terbaik</h3>
+                        <p style="font-size: 0.85rem; color: #555;">Penghargaan untuk tim kelompok paling solid, kreatif, dan saling mendukung dalam setiap tugas.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Form Komentar Khusus Tab Teladan -->
+            <div class="comment-section" style="margin-top: 25px;">
+                <h4>💬 Kirim Ucapan Selamat & Apresiasi Orang Tua:</h4>
+                <form onsubmit="kirimKomentar(event)">
+                    <div class="form-group"><input type="text" placeholder="Nama Orang Tua / Wali..." required></div>
+                    <div class="form-group"><textarea rows="3" placeholder="Tuliskan ucapan selamat atau motivasi untuk para siswa teladan..." required></textarea></div>
+                    <button type="submit" class="btn-kirim">Kirim Pesan Apresiasi</button>
+                </form>
             </div>
         </section>
 
@@ -282,7 +371,7 @@
         <p>&copy; 2026 LENTERA 6 — UPT SDN 024184 Binjai | Dikembangkan oleh Ersy Sumita, S.Pd.</p>
     </footer>
 
-    <!-- Script Logika Tab, Sub-Tab, & Komentar -->
+    <!-- Script Logika Tab & Komentar -->
     <script>
         function openTab(tabId) {
             var contents = document.querySelectorAll('.tab-content');
