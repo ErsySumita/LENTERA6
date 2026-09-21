@@ -14,9 +14,9 @@
         header p { font-size: 1rem; opacity: 0.95; }
         .sub-header { background: #0f2027; color: #e0e0e0; text-align: center; padding: 8px; font-size: 0.85rem; }
 
-        /* Navigasi Utama */
+        /* Navigasi Utama (3 TAB) */
         nav { background: #1a252f; display: flex; justify-content: center; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; }
-        nav button { background: none; border: none; color: white; padding: 14px 20px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: 0.3s; }
+        nav button { background: none; border: none; color: white; padding: 14px 24px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: 0.3s; }
         nav button:hover, nav button.active { background: #2a5298; color: #fff; border-bottom: 4px solid #00d2ff; }
 
         /* Kontainer Utama */
@@ -24,7 +24,7 @@
         .tab-content { display: none; }
         .tab-content.active { display: block; }
 
-        .card { background: white; border-radius: 10px; padding: 25px; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .card { background: white; border-radius: 10px; padding: 25px; margin-bottom: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
         .card h2 { color: #1e3c72; border-bottom: 2px solid #eef2f5; padding-bottom: 10px; margin-bottom: 15px; }
 
         /* Informasi Kelas */
@@ -33,7 +33,7 @@
         .info-box h4 { color: #1e3c72; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 5px; }
         .info-box p { font-size: 1.05rem; font-weight: bold; color: #2c3e50; }
 
-        /* Sub-Tab Galeri Portofolio */
+        /* Sub-Navigasi Galeri */
         .sub-nav { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; border-bottom: 2px solid #ddd; padding-bottom: 10px; }
         .sub-nav button { background: #e0e6ed; border: none; padding: 8px 16px; border-radius: 20px; font-weight: 600; color: #4a5568; cursor: pointer; }
         .sub-nav button.active-sub { background: #2a5298; color: white; }
@@ -41,23 +41,21 @@
         .sub-content { display: none; }
         .sub-content.active-sub { display: block; }
 
-        /* Grid Kartu Karya & Apresiasi */
-        .grid-karya { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .karya-item { border: 1px solid #e1e8ed; border-radius: 8px; overflow: hidden; background: #fff; transition: 0.3s; }
-        .karya-item:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.1); }
-        .karya-item img { width: 100%; height: 200px; object-fit: cover; }
-        .karya-content { padding: 15px; }
-        .karya-content h3 { color: #2a5298; margin-bottom: 8px; font-size: 1.1rem; }
-        .badge { display: inline-block; background: #e3f2fd; color: #1565c0; padding: 3px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; margin-bottom: 8px; }
-        .badge-star { background: #fff3cd; color: #856404; }
-        .btn-baca { display: inline-block; margin-top: 10px; padding: 8px 14px; background: #2a5298; color: white; text-decoration: none; border-radius: 5px; font-size: 0.85rem; font-weight: 500; }
+        /* Container Video Shorts vertical aspect ratio */
+        .video-shorts-wrapper { position: relative; width: 100%; max-width: 320px; height: 560px; margin: 15px auto; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.15); }
+        .video-shorts-wrapper iframe { position: absolute; top:0; left: 0; width: 100%; height: 100%; border: none; }
 
-        /* Form Komentar Orang Tua */
-        .comment-box { background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; margin-top: 25px; }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; font-weight: bold; margin-bottom: 5px; font-size: 0.9rem; }
-        .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 0.95rem; }
-        .btn-kirim { background: #27ae60; color: white; border: none; padding: 10px 20px; border-radius: 5px; font-weight: bold; cursor: pointer; }
+        /* Badge Tag */
+        .badge { display: inline-block; background: #e3f2fd; color: #1565c0; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-bottom: 10px; }
+        .badge-star { background: #fff3cd; color: #856404; }
+
+        /* Form Komentar per Karya */
+        .comment-section { background: #f8fafc; border-top: 2px dashed #cbd5e1; padding: 15px; margin-top: 15px; border-radius: 0 0 8px 8px; }
+        .comment-section h4 { color: #1e3c72; font-size: 0.95rem; margin-bottom: 10px; }
+        .form-group { margin-bottom: 10px; }
+        .form-group input, .form-group textarea { width: 100%; padding: 8px 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 0.9rem; }
+        .btn-kirim { background: #27ae60; color: white; border: none; padding: 8px 16px; border-radius: 5px; font-weight: bold; cursor: pointer; font-size: 0.85rem; }
+        .btn-kirim:hover { background: #219150; }
 
         /* Footer */
         footer { text-align: center; padding: 20px; background: #0f2027; color: white; font-size: 0.85rem; margin-top: 40px; }
@@ -73,16 +71,16 @@
         SD Negeri 024184 Binjai • Ekosistem Portofolio & Transparansi Hasil Belajar Murid
     </div>
 
-    <!-- Navigasi Tab Utama -->
+    <!-- Navigasi 3 TAB UTAMA -->
     <nav>
-        <button class="tab-btn active" onclick="openTab('beranda')">Beranda & Info Kelas</button>
-        <button class="tab-btn" onclick="openTab('galeri')">Galeri Portofolio Siswa</button>
-        <button class="tab-btn" onclick="openTab('apresiasi')">Ruang Orang Tua & Apresiasi</button>
+        <button class="tab-btn active" onclick="openTab('beranda')">Beranda</button>
+        <button class="tab-btn" onclick="openTab('galeri')">Galeri Portofolio</button>
+        <button class="tab-btn" onclick="openTab('teladan')">Teladan Siswa</button>
     </nav>
 
     <div class="container">
         
-        <!-- TAB 1: BERANDA -->
+        <!-- ==================== TAB 1: BERANDA ==================== -->
         <section id="beranda" class="tab-content active card">
             <h2>Profil & Informasi Kelas VI A</h2>
             
@@ -106,160 +104,175 @@
             </div>
 
             <br><br>
-            <h2>Tentang Platform LENTERA 6</h2>
-            <p><strong>LENTERA 6</strong> (<em>Laporan & Etalase Belajar Anak Kelas VI</em>) merupakan media publikasi digital yang mendokumentasikan seluruh proses belajar, karya proyek, literasi, serta rekam jejak perkembangan murid Kelas VI A SDN 024184 Binjai secara berkelanjutan.</p>
+            <h2>Deskripsi Umum LENTERA 6</h2>
+            <p><strong>LENTERA 6</strong> (<em>Laporan & Etalase Belajar Anak Kelas VI</em>) merupakan platform digital terpadu yang mendokumentasikan seluruh rekam jejak, unjuk kerja, karya literasi, dan projek pembelajaran siswa Kelas VI A SDN 024184 Binjai.</p>
             <br>
-            <p>Melalui platform ini, orang tua dapat memantau hasil karya autentik putra-putrinya secara transparan, memberikan umpan balik, melihat panggung apresiasi bulanan, serta menerima laporan perkembangan berkala langsung melalui jaringan WhatsApp.</p>
+            <p>Melalui ekosistem ini, proses belajar siswa disajikan secara terbuka. Orang tua/wali murid dapat melihat video unjuk kerja anak secara personal, memberikan tanggapan atau ucapan apresiasi pada tiap karya, serta memantau perkembangan teladan siswa secara berkala.</p>
         </section>
 
-        <!-- TAB 2: GALERI PORTOFOLIO -->
+
+        <!-- ==================== TAB 2: GALERI PORTOFOLIO ==================== -->
         <section id="galeri" class="tab-content card">
-            <h2>Galeri Portofolio & Dokumentasi Belajar Siswa</h2>
-            <p style="margin-bottom: 15px; color: #555;">Pilih kategori portofolio di bawah ini untuk melihat karya murid:</p>
+            <h2>Galeri Portofolio Hasil Belajar Siswa</h2>
+            <p style="margin-bottom: 15px; color: #555;">Pilih mata pelajaran / bidang portofolio di bawah ini:</p>
 
-            <!-- Sub-Navigasi Galeri -->
+            <!-- Sub Navigasi Mata Pelajaran -->
             <div class="sub-nav">
-                <button class="sub-btn" onclick="openSubTab('mbg')">🌱 Proyek Sampah MBG (HORAS)</button>
-                <button class="sub-btn active-sub" onclick="openSubTab('ipas')">🔬 IPAS (2 Video)</button>
-                <button class="sub-btn" onclick="openSubTab('literasi')">📚 Literasi (2 Video)</button>
-                <button class="sub-btn" onclick="openSubTab('seni')">🎨 Seni & P5 (1 Video)</button>
-                <button class="sub-btn" onclick="openSubTab('bing')">🇬🇧 Bahasa Inggris (1 Video)</button>
+                <button class="sub-btn active-sub" onclick="openSubTab('bind')">🇮🇩 Bahasa Indonesia</button>
+                <button class="sub-btn" onclick="openSubTab('bing')">🇬🇧 Bahasa Inggris</button>
+                <button class="sub-btn" onclick="openSubTab('sains')">🧪 Literasi Sains</button>
+                <button class="sub-btn" onclick="openSubTab('ipas')">🔬 IPAS (2 Karya)</button>
+                <button class="sub-btn" onclick="openSubTab('seni')">🎨 Seni</button>
+                <button class="sub-btn" onclick="openSubTab('mbg')">🌱 Proyek Sampah MBG</button>
             </div>
 
-            <!-- SUB-TAB MBG -->
-            <div id="mbg" class="sub-content">
-                <p style="margin-bottom: 15px;"><em>Proyek inovasi pengolahan sampah program Makan Bergizi Gratis (MBG):</em></p>
-                <p style="font-style: italic; color: #666;">(Segera Hadir: Dokumentasi Proyek Pengolahan Sampah MBG Kelas VI A)</p>
-            </div>
+            <!-- SUB-TAB 1: BAHASA INDONESIA -->
+            <div id="bind" class="sub-content active-sub">
+                <span class="badge">Bahasa Indonesia</span>
+                <h3>Unjuk Kerja Bahasa Indonesia</h3>
+                <p>Dokumentasi penampilan literasi dan percakapan Bahasa Indonesia siswa Kelas VI A.</p>
+                
+                <div class="video-shorts-wrapper">
+                    <iframe src="https://www.youtube.com/embed/t66kZFYuLn4" allowfullscreen></iframe>
+                </div>
 
-            <!-- SUB-TAB IPAS -->
-            <div id="ipas" class="sub-content active-sub">
-                <p style="margin-bottom: 15px;"><em>Dokumentasi praktikum & unjuk kerja IPAS:</em></p>
-                <div class="grid-karya">
-                    <div class="karya-item">
-                        <img src="https://via.placeholder.com/400x200?text=IPAS+Video+1" alt="IPAS 1">
-                        <div class="karya-content">
-                            <span class="badge">IPAS - Praktikum 1</span>
-                            <h3>Dokumentasi Pembelajaran IPAS 1</h3>
-                            <p>Unjuk kerja dan eksperimen siswa dalam pembelajaran IPAS.</p>
-                            <a href="ipas-video1.html" class="btn-baca">Lihat Video & Detail →</a>
-                        </div>
-                    </div>
-                    <div class="karya-item">
-                        <img src="https://via.placeholder.com/400x200?text=IPAS+Video+2" alt="IPAS 2">
-                        <div class="karya-content">
-                            <span class="badge">IPAS - Praktikum 2</span>
-                            <h3>Dokumentasi Pembelajaran IPAS 2</h3>
-                            <p>Eksplorasi materi IPAS melalui kerja kelompok dan diskusi aktif.</p>
-                            <a href="ipas-video2.html" class="btn-baca">Lihat Video & Detail →</a>
-                        </div>
-                    </div>
+                <div class="comment-section">
+                    <h4>💬 Berikan Umpan Balik / Komentar Orang Tua:</h4>
+                    <form onsubmit="kirimKomentar(event)">
+                        <div class="form-group"><input type="text" placeholder="Nama Orang Tua / Wali..." required></div>
+                        <div class="form-group"><textarea rows="2" placeholder="Tuliskan ucapan bangga / pesan untuk karya ini..." required></textarea></div>
+                        <button type="submit" class="btn-kirim">Kirim Umpan Balik</button>
+                    </form>
                 </div>
             </div>
 
-            <!-- SUB-TAB LITERASI -->
-            <div id="literasi" class="sub-content">
-                <p style="margin-bottom: 15px;"><em>Unjuk kemampuan literasi membaca & menulis murid:</em></p>
-                <div class="grid-karya">
-                    <div class="karya-item">
-                        <img src="https://via.placeholder.com/400x200?text=Literasi+Video+1" alt="Literasi 1">
-                        <div class="karya-content">
-                            <span class="badge">Literasi 1</span>
-                            <h3>Karya Literasi Siswa 1</h3>
-                            <p>Presentasi dan pembacaan hasil karya tulis murid.</p>
-                            <a href="literasi-video1.html" class="btn-baca">Lihat Video & Detail →</a>
-                        </div>
-                    </div>
-                    <div class="karya-item">
-                        <img src="https://via.placeholder.com/400x200?text=Literasi+Video+2" alt="Literasi 2">
-                        <div class="karya-content">
-                            <span class="badge">Literasi 2</span>
-                            <h3>Karya Literasi Siswa 2</h3>
-                            <p>Dokumentasi aktivitas literasi dan ulasan bacaan anak.</p>
-                            <a href="literasi-video2.html" class="btn-baca">Lihat Video & Detail →</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- SUB-TAB SENI & P5 -->
-            <div id="seni" class="sub-content">
-                <p style="margin-bottom: 15px;"><em>Kreativitas seni rupa dan kegiatan karakter P5:</em></p>
-                <div class="grid-karya">
-                    <div class="karya-item">
-                        <img src="https://via.placeholder.com/400x200?text=Seni+P5+Video" alt="Seni P5">
-                        <div class="karya-content">
-                            <span class="badge">Seni & P5</span>
-                            <h3>Unjuk Kerja Seni & Projek P5</h3>
-                            <p>Aktivitas olah kreasi dan gelar karya proyek siswa.</p>
-                            <a href="seni-p5.html" class="btn-baca">Lihat Video & Detail →</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- SUB-TAB BAHASA INGGRIS -->
+            <!-- SUB-TAB 2: BAHASA INGGRIS -->
             <div id="bing" class="sub-content">
-                <p style="margin-bottom: 15px;"><em>Praktik percakapan dan literasi Bahasa Inggris:</em></p>
-                <div class="grid-karya">
-                    <div class="karya-item">
-                        <img src="https://via.placeholder.com/400x200?text=Bahasa+Inggris" alt="Bahasa Inggris">
-                        <div class="karya-content">
-                            <span class="badge">English Practice</span>
-                            <h3>English Learning Activity</h3>
-                            <p>Praktik percakapan dan unjuk pemahaman Bahasa Inggris murid.</p>
-                            <a href="bahasa-inggris.html" class="btn-baca">Lihat Video & Detail →</a>
-                        </div>
-                    </div>
+                <span class="badge">Bahasa Inggris</span>
+                <h3>English Practice & Conversation</h3>
+                <p>Unjuk keberanian dan kelancaran berbicara dalam Bahasa Inggris.</p>
+                
+                <div class="video-shorts-wrapper">
+                    <iframe src="https://www.youtube.com/embed/2CKBrqYw6v8" allowfullscreen></iframe>
                 </div>
+
+                <div class="comment-section">
+                    <h4>💬 Berikan Umpan Balik / Komentar Orang Tua:</h4>
+                    <form onsubmit="kirimKomentar(event)">
+                        <div class="form-group"><input type="text" placeholder="Nama Orang Tua / Wali..." required></div>
+                        <div class="form-group"><textarea rows="2" placeholder="Tuliskan ucapan bangga / pesan untuk karya ini..." required></textarea></div>
+                        <button type="submit" class="btn-kirim">Kirim Umpan Balik</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- SUB-TAB 3: LITERASI SAINS -->
+            <div id="sains" class="sub-content">
+                <span class="badge">Literasi Sains</span>
+                <h3>Eksplorasi & Literasi Sains</h3>
+                <p>Penyampaian gagasan dan pemahaman fenomena sains oleh siswa.</p>
+                
+                <div class="video-shorts-wrapper">
+                    <iframe src="https://www.youtube.com/embed/i5jJ7VS7Sfc" allowfullscreen></iframe>
+                </div>
+
+                <div class="comment-section">
+                    <h4>💬 Berikan Umpan Balik / Komentar Orang Tua:</h4>
+                    <form onsubmit="kirimKomentar(event)">
+                        <div class="form-group"><input type="text" placeholder="Nama Orang Tua / Wali..." required></div>
+                        <div class="form-group"><textarea rows="2" placeholder="Tuliskan ucapan bangga / pesan untuk karya ini..." required></textarea></div>
+                        <button type="submit" class="btn-kirim">Kirim Umpan Balik</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- SUB-TAB 4: IPAS (2 VIDEO) -->
+            <div id="ipas" class="sub-content">
+                <span class="badge">IPAS - Praktikum 1</span>
+                <h3>Praktikum IPAS Bagian 1</h3>
+                <div class="video-shorts-wrapper">
+                    <iframe src="https://www.youtube.com/embed/aRej28D0bag" allowfullscreen></iframe>
+                </div>
+
+                <div class="comment-section">
+                    <h4>💬 Umpan Balik IPAS Bagian 1:</h4>
+                    <form onsubmit="kirimKomentar(event)">
+                        <div class="form-group"><input type="text" placeholder="Nama Orang Tua / Wali..." required></div>
+                        <div class="form-group"><textarea rows="2" placeholder="Tuliskan apresiasi Anda..." required></textarea></div>
+                        <button type="submit" class="btn-kirim">Kirim Umpan Balik</button>
+                    </form>
+                </div>
+
+                <br><hr><br>
+
+                <span class="badge">IPAS - Praktikum 2</span>
+                <h3>Praktikum IPAS Bagian 2</h3>
+                <div class="video-shorts-wrapper">
+                    <iframe src="https://www.youtube.com/embed/5mK-zKZMuDE" allowfullscreen></iframe>
+                </div>
+
+                <div class="comment-section">
+                    <h4>💬 Umpan Balik IPAS Bagian 2:</h4>
+                    <form onsubmit="kirimKomentar(event)">
+                        <div class="form-group"><input type="text" placeholder="Nama Orang Tua / Wali..." required></div>
+                        <div class="form-group"><textarea rows="2" placeholder="Tuliskan apresiasi Anda..." required></textarea></div>
+                        <button type="submit" class="btn-kirim">Kirim Umpan Balik</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- SUB-TAB 5: SENI -->
+            <div id="seni" class="sub-content">
+                <span class="badge">Seni & Budaya</span>
+                <h3>Unjuk Kerja Seni & Kreativitas</h3>
+                <p>Dokumentasi hasil karya seni rupa dan kreasi tangan murid.</p>
+                
+                <div class="video-shorts-wrapper">
+                    <iframe src="https://www.youtube.com/embed/Ax6s-FrYX2Q" allowfullscreen></iframe>
+                </div>
+
+                <div class="comment-section">
+                    <h4>💬 Berikan Umpan Balik / Komentar Orang Tua:</h4>
+                    <form onsubmit="kirimKomentar(event)">
+                        <div class="form-group"><input type="text" placeholder="Nama Orang Tua / Wali..." required></div>
+                        <div class="form-group"><textarea rows="2" placeholder="Tuliskan ucapan bangga / pesan untuk karya ini..." required></textarea></div>
+                        <button type="submit" class="btn-kirim">Kirim Umpan Balik</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- SUB-TAB 6: PROYEK MBG -->
+            <div id="mbg" class="sub-content">
+                <span class="badge">Inovasi MBG</span>
+                <h3>Proyek Pengolahan Sampah MBG (HORAS)</h3>
+                <p><em>Dokumentasi proyek pengolahan sampah Makan Bergizi Gratis sedang disiapkan...</em></p>
             </div>
 
         </section>
 
-        <!-- TAB 3: RUANG ORANG TUA & APRESIASI MURID -->
-        <section id="apresiasi" class="tab-content card">
-            <h2>Panggung Apresiasi Murid Bulanan</h2>
-            <p style="margin-bottom: 20px;">Penghargaan khusus untuk merayakan setiap usaha, kedisiplinan, kreativitas, dan pertumbuhan karakter positif murid Kelas VI A setiap bulannya:</p>
 
-            <!-- Grid Foto Penghargaan Bulanan -->
-            <div class="grid-karya">
-                
-                <div class="karya-item">
-                    <img src="foto-apresiasi-bulan1.jpg" alt="Siswa Terbaik Bulan Ini" onerror="this.src='https://via.placeholder.com/400x250?text=Upload+Foto+Apresiasi+Bulan+Ini'">
-                    <div class="karya-content">
-                        <span class="badge badge-star">🌟 Bintang Bulan Ini</span>
-                        <h3>Bintang Disiplin & Kemitraan</h3>
-                        <p>Apresiasi atas konsistensi belajar, kehadiran, dan kreativitas terbaik bulan ini.</p>
-                    </div>
+        <!-- ==================== TAB 3: TELADAN SISWA ==================== -->
+        <section id="teladan" class="tab-content card">
+            <h2>Panggung Teladan Siswa Bulanan</h2>
+            <p style="margin-bottom: 20px;">Apresiasi khusus untuk merayakan kedisiplinan, kreativitas, kepemimpinan, dan pertumbuhan karakter murid Kelas VI A setiap bulannya:</p>
+
+            <div style="border: 1px solid #e1e8ed; border-radius: 8px; overflow: hidden; background: #fff; margin-bottom: 20px;">
+                <img src="foto-teladan.jpg" alt="Foto Teladan Siswa" style="width: 100%; max-height: 400px; object-fit: cover;" onerror="this.src='https://via.placeholder.com/800x400?text=Upload+Foto+Teladan+Siswa+Di+Sini'">
+                <div style="padding: 20px;">
+                    <span class="badge badge-star">🌟 Teladan Bulan Ini</span>
+                    <h3>Penghargaan Disiplin & Karakter Terpuji</h3>
+                    <p>Selamat kepada murid-murid penerima penghargaan teladan bulan ini atas konsistensi dalam belajar, keaktifan membaca, dan kerja sama yang sangat baik!</p>
                 </div>
 
-                <div class="karya-item">
-                    <img src="foto-apresiasi-literasi.jpg" alt="Duta Literasi Bulan Ini" onerror="this.src='https://via.placeholder.com/400x250?text=Upload+Foto+Duta+Literasi'">
-                    <div class="karya-content">
-                        <span class="badge badge-star">📚 Duta Literasi</span>
-                        <h3>Pembaca & Penulis Paling Tekun</h3>
-                        <p>Penghargaan untuk murid dengan semangat membaca dan penyusunan karya tulis terbaik.</p>
-                    </div>
+                <!-- Form Komentar Khusus Tab Teladan -->
+                <div class="comment-section">
+                    <h4>💬 Kirim Ucapan Selamat & Apresiasi Orang Tua:</h4>
+                    <form onsubmit="kirimKomentar(event)">
+                        <div class="form-group"><input type="text" placeholder="Nama Orang Tua / Wali..." required></div>
+                        <div class="form-group"><textarea rows="3" placeholder="Tuliskan ucapan selamat atau motivasi untuk siswa teladan..." required></textarea></div>
+                        <button type="submit" class="btn-kirim">Kirim Pesan Apresiasi</button>
+                    </form>
                 </div>
-
-            </div>
-
-            <!-- Form Umpan Balik Orang Tua -->
-            <div class="comment-box">
-                <h3 style="color: #1e3c72; margin-bottom: 10px;">Ruang Umpan Balik & Pesan Orang Tua</h3>
-                <p style="margin-bottom: 15px; font-size: 0.9rem; color: #555;">Bapak/Ibu dapat memberikan pesan bangga, masukan, atau apresiasi atas karya dan penghargaan yang diraih anak-anak:</p>
-                
-                <form id="formKomentar">
-                    <div class="form-group">
-                        <label>Nama Orang Tua / Wali:</label>
-                        <input type="text" placeholder="Contoh: Orang Tua dari Ahmad Fauzi" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Pesan / Pesan Apresiasi untuk Anak:</label>
-                        <textarea rows="4" placeholder="Tuliskan kata-kata motivasi atau kesan Bapak/Ibu di sini..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn-kirim">Kirim Pesan Apresiasi</button>
-                </form>
             </div>
         </section>
 
@@ -269,7 +282,7 @@
         <p>&copy; 2026 LENTERA 6 — UPT SDN 024184 Binjai | Dikembangkan oleh Ersy Sumita, S.Pd.</p>
     </footer>
 
-    <!-- Script Logika Tab & Sub-Tab -->
+    <!-- Script Logika Tab, Sub-Tab, & Komentar -->
     <script>
         function openTab(tabId) {
             var contents = document.querySelectorAll('.tab-content');
@@ -293,11 +306,11 @@
             event.currentTarget.classList.add('active-sub');
         }
 
-        document.getElementById('formKomentar').addEventListener('submit', function(e) {
+        function kirimKomentar(e) {
             e.preventDefault();
-            alert('Terima kasih Bapak/Ibu! Pesan apresiasi Anda telah berhasil dikirim.');
-            this.reset();
-        });
+            alert('Terima kasih Bapak/Ibu! Umpan balik & apresiasi Anda berhasil terkirim.');
+            e.target.reset();
+        }
     </script>
 
 </body>
