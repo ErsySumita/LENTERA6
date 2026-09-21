@@ -4,12 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LENTERA 6 - SDN 024184 Binjai</title>
+    
+    <!-- OneSignal Web Push Notification SDK -->
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    <script>
+      window.OneSignalDeferred = window.OneSignalDeferred || [];
+      OneSignalDeferred.push(async function(OneSignal) {
+        await OneSignal.init({
+          appId: "PASTE_APP_ID_ANDA_DI_SINI", // GANTI DENGAN APP ID DARI ONESIGNAL
+          notifyButton: {
+            enable: true, /* Ikon lonceng melayang di kanan bawah */
+          },
+          subscribers: {
+            autoPrompt: true /* Otomatis minta izin notifikasi saat web dibuka */
+          }
+        });
+      });
+    </script>
+
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: #f4f7f6; color: #333; line-height: 1.6; }
         
+        /* Gambar Banner Header Atas */
+        .banner-header { width: 100%; max-height: 250px; overflow: hidden; background: #1e3c72; text-align: center; }
+        .banner-header img { width: 100%; height: auto; max-height: 250px; object-fit: cover; display: block; }
+
         /* Header & Banner Sekolah */
-        header { background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; text-align: center; padding: 2.5rem 1rem 1.5rem 1rem; }
+        header { background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; text-align: center; padding: 1.8rem 1rem 1.2rem 1rem; }
         header h1 { font-size: 2.2rem; margin-bottom: 0.3rem; letter-spacing: 1px; }
         header p { font-size: 1rem; opacity: 0.95; }
         .sub-header { background: #0f2027; color: #e0e0e0; text-align: center; padding: 8px; font-size: 0.85rem; }
@@ -58,18 +80,24 @@
         .badge { display: inline-block; background: #e3f2fd; color: #1565c0; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-bottom: 10px; }
         .badge-star { background: #fff3cd; color: #856404; }
 
-        /* Form Komentar */
+        /* Form Komentar WA Otomatis */
         .comment-section { background: #f8fafc; border-top: 2px dashed #cbd5e1; padding: 15px; margin-top: 15px; border-radius: 0 0 8px 8px; }
         .comment-section h4 { color: #1e3c72; font-size: 0.95rem; margin-bottom: 10px; }
         .form-group { margin-bottom: 10px; }
         .form-group input, .form-group textarea { width: 100%; padding: 8px 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 0.9rem; }
-        .btn-kirim { background: #27ae60; color: white; border: none; padding: 8px 16px; border-radius: 5px; font-weight: bold; cursor: pointer; font-size: 0.85rem; }
+        .btn-kirim-wa { background: #25D366; color: white; border: none; padding: 10px 18px; border-radius: 5px; font-weight: bold; cursor: pointer; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 8px; }
+        .btn-kirim-wa:hover { background: #1da851; }
 
         /* Footer */
         footer { text-align: center; padding: 20px; background: #0f2027; color: white; font-size: 0.85rem; margin-top: 40px; }
     </style>
 </head>
 <body>
+
+    <!-- GAMBAR BANNER HEADER UTAMA -->
+    <div class="banner-header">
+        <img src="logo.jpg" alt="Banner LENTERA 6 SDN 024184 Binjai">
+    </div>
 
     <header>
         <h1>LENTERA 6</h1>
@@ -115,7 +143,7 @@
             <h2>Deskripsi Umum LENTERA 6</h2>
             <p><strong>LENTERA 6</strong> (<em>Laporan & Etalase Belajar Anak Kelas VI</em>) merupakan platform digital terpadu yang mendokumentasikan seluruh rekam jejak, unjuk kerja, karya literasi, dan projek pembelajaran siswa Kelas VI A SDN 024184 Binjai.</p>
             <br>
-            <p>Melalui ekosistem ini, proses belajar siswa disajikan secara terbuka. Orang tua/wali murid dapat melihat video unjuk kerja anak secara personal, memberikan tanggapan atau ucapan apresiasi pada tiap karya, serta memantau perkembangan teladan siswa secara berkala.</p>
+            <p>Melalui ekosistem ini, proses belajar siswa disajikan secara terbuka. Orang tua/wali murid dapat melihat video unjuk kerja anak secara personal, memberikan tanggapan atau ucapan apresiasi pada tiap karya via WhatsApp, serta memantau perkembangan teladan siswa secara berkala.</p>
         </section>
 
 
@@ -146,11 +174,11 @@
                     <iframe src="https://www.youtube-nocookie.com/embed/t66kZFYuLn4" allowfullscreen></iframe>
                 </div>
                 <div class="comment-section">
-                    <h4>💬 Berikan Umpan Balik / Komentar Orang Tua:</h4>
-                    <form onsubmit="kirimKomentar(event)">
-                        <div class="form-group"><input type="text" placeholder="Nama Orang Tua / Wali..." required></div>
-                        <div class="form-group"><textarea rows="2" placeholder="Tuliskan ucapan bangga / pesan untuk karya ini..." required></textarea></div>
-                        <button type="submit" class="btn-kirim">Kirim Umpan Balik</button>
+                    <h4>💬 Kirim Apresiasi / Umpan Balik via WhatsApp:</h4>
+                    <form onsubmit="kirimWA(event, 'Bahasa Indonesia - Cerita Rakyat')">
+                        <div class="form-group"><input type="text" class="nama-ortu" placeholder="Nama Orang Tua / Wali..." required></div>
+                        <div class="form-group"><textarea class="pesan-ortu" rows="2" placeholder="Tuliskan ucapan bangga / pesan untuk karya ini..." required></textarea></div>
+                        <button type="submit" class="btn-kirim-wa">📲 Kirim Apresiasi via WA Wali Kelas</button>
                     </form>
                 </div>
             </div>
@@ -166,11 +194,11 @@
                     <iframe src="https://www.youtube-nocookie.com/embed/2CKBrqYw6v8" allowfullscreen></iframe>
                 </div>
                 <div class="comment-section">
-                    <h4>💬 Berikan Umpan Balik / Komentar Orang Tua:</h4>
-                    <form onsubmit="kirimKomentar(event)">
-                        <div class="form-group"><input type="text" placeholder="Nama Orang Tua / Wali..." required></div>
-                        <div class="form-group"><textarea rows="2" placeholder="Tuliskan ucapan bangga / pesan untuk karya ini..." required></textarea></div>
-                        <button type="submit" class="btn-kirim">Kirim Umpan Balik</button>
+                    <h4>💬 Kirim Apresiasi / Umpan Balik via WhatsApp:</h4>
+                    <form onsubmit="kirimWA(event, 'Bahasa Inggris - Game Subject & To Be')">
+                        <div class="form-group"><input type="text" class="nama-ortu" placeholder="Nama Orang Tua / Wali..." required></div>
+                        <div class="form-group"><textarea class="pesan-ortu" rows="2" placeholder="Tuliskan ucapan bangga / pesan untuk karya ini..." required></textarea></div>
+                        <button type="submit" class="btn-kirim-wa">📲 Kirim Apresiasi via WA Wali Kelas</button>
                     </form>
                 </div>
             </div>
@@ -186,11 +214,11 @@
                     <iframe src="https://www.youtube-nocookie.com/embed/i5jJ7VS7Sfc" allowfullscreen></iframe>
                 </div>
                 <div class="comment-section">
-                    <h4>💬 Berikan Umpan Balik / Komentar Orang Tua:</h4>
-                    <form onsubmit="kirimKomentar(event)">
-                        <div class="form-group"><input type="text" placeholder="Nama Orang Tua / Wali..." required></div>
-                        <div class="form-group"><textarea rows="2" placeholder="Tuliskan ucapan bangga / pesan untuk karya ini..." required></textarea></div>
-                        <button type="submit" class="btn-kirim">Kirim Umpan Balik</button>
+                    <h4>💬 Kirim Apresiasi / Umpan Balik via WhatsApp:</h4>
+                    <form onsubmit="kirimWA(event, 'Literasi Sains - Treasure Hunter Kota Respira')">
+                        <div class="form-group"><input type="text" class="nama-ortu" placeholder="Nama Orang Tua / Wali..." required></div>
+                        <div class="form-group"><textarea class="pesan-ortu" rows="2" placeholder="Tuliskan ucapan bangga / pesan untuk karya ini..." required></textarea></div>
+                        <button type="submit" class="btn-kirim-wa">📲 Kirim Apresiasi via WA Wali Kelas</button>
                     </form>
                 </div>
             </div>
@@ -206,11 +234,11 @@
                     <iframe src="https://www.youtube-nocookie.com/embed/aRej28D0bag" allowfullscreen></iframe>
                 </div>
                 <div class="comment-section">
-                    <h4>💬 Umpan Balik IPAS Praktikum 1:</h4>
-                    <form onsubmit="kirimKomentar(event)">
-                        <div class="form-group"><input type="text" placeholder="Nama Orang Tua / Wali..." required></div>
-                        <div class="form-group"><textarea rows="2" placeholder="Tuliskan apresiasi Anda..." required></textarea></div>
-                        <button type="submit" class="btn-kirim">Kirim Umpan Balik</button>
+                    <h4>💬 Kirim Apresiasi IPAS Praktikum 1:</h4>
+                    <form onsubmit="kirimWA(event, 'IPAS Praktikum 1 - Model Paru-Paru')">
+                        <div class="form-group"><input type="text" class="nama-ortu" placeholder="Nama Orang Tua / Wali..." required></div>
+                        <div class="form-group"><textarea class="pesan-ortu" rows="2" placeholder="Tuliskan apresiasi Anda..." required></textarea></div>
+                        <button type="submit" class="btn-kirim-wa">📲 Kirim Apresiasi via WA Wali Kelas</button>
                     </form>
                 </div>
 
@@ -225,11 +253,11 @@
                     <iframe src="https://www.youtube-nocookie.com/embed/5mK-zKZMuDE" allowfullscreen></iframe>
                 </div>
                 <div class="comment-section">
-                    <h4>💬 Umpan Balik IPAS Praktikum 2:</h4>
-                    <form onsubmit="kirimKomentar(event)">
-                        <div class="form-group"><input type="text" placeholder="Nama Orang Tua / Wali..." required></div>
-                        <div class="form-group"><textarea rows="2" placeholder="Tuliskan apresiasi Anda..." required></textarea></div>
-                        <button type="submit" class="btn-kirim">Kirim Umpan Balik</button>
+                    <h4>💬 Kirim Apresiasi IPAS Praktikum 2:</h4>
+                    <form onsubmit="kirimWA(event, 'IPAS Praktikum 2 - Bahaya Merokok')">
+                        <div class="form-group"><input type="text" class="nama-ortu" placeholder="Nama Orang Tua / Wali..." required></div>
+                        <div class="form-group"><textarea class="pesan-ortu" rows="2" placeholder="Tuliskan apresiasi Anda..." required></textarea></div>
+                        <button type="submit" class="btn-kirim-wa">📲 Kirim Apresiasi via WA Wali Kelas</button>
                     </form>
                 </div>
             </div>
@@ -245,11 +273,11 @@
                     <iframe src="https://www.youtube-nocookie.com/embed/Ax6s-FrYX2Q" allowfullscreen></iframe>
                 </div>
                 <div class="comment-section">
-                    <h4>💬 Berikan Umpan Balik / Komentar Orang Tua:</h4>
-                    <form onsubmit="kirimKomentar(event)">
-                        <div class="form-group"><input type="text" placeholder="Nama Orang Tua / Wali..." required></div>
-                        <div class="form-group"><textarea rows="2" placeholder="Tuliskan ucapan bangga / pesan untuk karya ini..." required></textarea></div>
-                        <button type="submit" class="btn-kirim">Kirim Umpan Balik</button>
+                    <h4>💬 Kirim Apresiasi / Umpan Balik via WhatsApp:</h4>
+                    <form onsubmit="kirimWA(event, 'Seni & Budaya - Unjuk Bakat P5')">
+                        <div class="form-group"><input type="text" class="nama-ortu" placeholder="Nama Orang Tua / Wali..." required></div>
+                        <div class="form-group"><textarea class="pesan-ortu" rows="2" placeholder="Tuliskan ucapan bangga / pesan untuk karya ini..." required></textarea></div>
+                        <button type="submit" class="btn-kirim-wa">📲 Kirim Apresiasi via WA Wali Kelas</button>
                     </form>
                 </div>
             </div>
@@ -286,11 +314,11 @@
                 </div>
 
                 <div class="comment-section">
-                    <h4>💬 Umpan Balik Foto Belajar Kelompok:</h4>
-                    <form onsubmit="kirimKomentar(event)">
-                        <div class="form-group"><input type="text" placeholder="Nama Orang Tua / Wali..." required></div>
-                        <div class="form-group"><textarea rows="2" placeholder="Tuliskan pesan atau apresiasi untuk kerja kelompok siswa..." required></textarea></div>
-                        <button type="submit" class="btn-kirim">Kirim Umpan Balik</button>
+                    <h4>💬 Kirim Apresiasi Foto Belajar Kelompok:</h4>
+                    <form onsubmit="kirimWA(event, 'Foto Belajar - Model Paru-Paru Manusia')">
+                        <div class="form-group"><input type="text" class="nama-ortu" placeholder="Nama Orang Tua / Wali..." required></div>
+                        <div class="form-group"><textarea class="pesan-ortu" rows="2" placeholder="Tuliskan pesan atau apresiasi untuk kerja kelompok siswa..." required></textarea></div>
+                        <button type="submit" class="btn-kirim-wa">📲 Kirim Apresiasi via WA Wali Kelas</button>
                     </form>
                 </div>
             </div>
@@ -357,10 +385,10 @@
             <!-- Form Komentar Khusus Tab Teladan -->
             <div class="comment-section" style="margin-top: 25px;">
                 <h4>💬 Kirim Ucapan Selamat & Apresiasi Orang Tua:</h4>
-                <form onsubmit="kirimKomentar(event)">
-                    <div class="form-group"><input type="text" placeholder="Nama Orang Tua / Wali..." required></div>
-                    <div class="form-group"><textarea rows="3" placeholder="Tuliskan ucapan selamat atau motivasi untuk para siswa teladan..." required></textarea></div>
-                    <button type="submit" class="btn-kirim">Kirim Pesan Apresiasi</button>
+                <form onsubmit="kirimWA(event, 'Apresiasi Panggung Siswa Teladan')">
+                    <div class="form-group"><input type="text" class="nama-ortu" placeholder="Nama Orang Tua / Wali..." required></div>
+                    <div class="form-group"><textarea class="pesan-ortu" rows="3" placeholder="Tuliskan ucapan selamat atau motivasi untuk para siswa teladan..." required></textarea></div>
+                    <button type="submit" class="btn-kirim-wa">📲 Kirim Apresiasi via WA Wali Kelas</button>
                 </form>
             </div>
         </section>
@@ -371,8 +399,11 @@
         <p>&copy; 2026 LENTERA 6 — UPT SDN 024184 Binjai | Dikembangkan oleh Ersy Sumita, S.Pd.</p>
     </footer>
 
-    <!-- Script Logika Tab & Komentar -->
+    <!-- Script Logika Tab & WhatsApp Otomatis -->
     <script>
+        // Masukkan Nomor WhatsApp Wali Kelas Di Sini (Format: 628xxx tanpa tanda + atau 0 di depan)
+        const NOMOR_WA_GURU = "6281234567890"; // GANTI DENGAN NOMOR WA IBU ERSY
+
         function openTab(tabId) {
             var contents = document.querySelectorAll('.tab-content');
             contents.forEach(content => content.classList.remove('active'));
@@ -395,10 +426,22 @@
             event.currentTarget.classList.add('active-sub');
         }
 
-        function kirimKomentar(e) {
+        // Fungsi Mengirim Pesan Terformat Langsung ke WhatsApp Guru
+        function kirimWA(e, namaKarya) {
             e.preventDefault();
-            alert('Terima kasih Bapak/Ibu! Umpan balik & apresiasi Anda berhasil terkirim.');
-            e.target.reset();
+            
+            const form = e.target;
+            const nama = form.querySelector('.nama-ortu').value;
+            const pesan = form.querySelector('.pesan-ortu').value;
+
+            // Format Pesan WhatsApp
+            const teksPesan = `Halo Bu Ersy, saya *${nama}* (Orang Tua / Wali Murid Kelas VI A).%0A%0AMemberikan umpan balik untuk karya: *${namaKarya}*%0A%0A*Pesan / Apresiasi:*%0A"${pesan}"%0A%0A_Dikirim melalui Portal LENTERA 6 SDN 024184 Binjai_`;
+
+            // Buka WhatsApp Otomatis
+            const urlWA = `https://wa.me/${NOMOR_WA_GURU}?text=${teksPesan}`;
+            window.open(urlWA, '_blank');
+            
+            form.reset();
         }
     </script>
 
