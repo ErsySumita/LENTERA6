@@ -11,12 +11,12 @@
       window.OneSignalDeferred = window.OneSignalDeferred || [];
       OneSignalDeferred.push(async function(OneSignal) {
         await OneSignal.init({
-          appId: "PASTE_APP_ID_ANDA_DI_SINI", // GANTI DENGAN APP ID DARI ONESIGNAL
+          appId: "PASTE_APP_ID_ONESIGNAL_ANDA_DI_SINI", // Ganti dengan App ID dari dashboard OneSignal
           notifyButton: {
-            enable: true, /* Ikon lonceng melayang di kanan bawah */
+            enable: true,
           },
           subscribers: {
-            autoPrompt: true /* Otomatis minta izin notifikasi saat web dibuka */
+            autoPrompt: true
           }
         });
       });
@@ -26,7 +26,7 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: #f4f7f6; color: #333; line-height: 1.6; }
         
-        /* HEADER MODERN OPS 1 (Logo Samping Judul) */
+        /* HEADER MODERN */
         .header-modern {
             background: linear-gradient(135deg, #1e3c72, #2a5298);
             color: white;
@@ -54,21 +54,9 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
 
-        .header-text {
-            text-align: left;
-        }
-
-        .header-text h1 {
-            font-size: 2.2rem;
-            line-height: 1.1;
-            margin-bottom: 5px;
-            letter-spacing: 1px;
-        }
-
-        .header-text p {
-            font-size: 1rem;
-            opacity: 0.95;
-        }
+        .header-text { text-align: left; }
+        .header-text h1 { font-size: 2.2rem; line-height: 1.1; margin-bottom: 5px; letter-spacing: 1px; }
+        .header-text p { font-size: 1rem; opacity: 0.95; }
 
         .sub-header { 
             background: #0f2027; 
@@ -78,12 +66,12 @@
             font-size: 0.85rem; 
         }
 
-        /* Navigasi Utama (3 TAB) */
+        /* NAVIGASI UTAMA */
         nav { background: #1a252f; display: flex; justify-content: center; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; }
-        nav button { background: none; border: none; color: white; padding: 14px 24px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: 0.3s; }
+        nav button { background: none; border: none; color: white; padding: 14px 20px; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: 0.3s; }
         nav button:hover, nav button.active { background: #2a5298; color: #fff; border-bottom: 4px solid #00d2ff; }
 
-        /* Kontainer Utama */
+        /* KONTAINER UTAMA */
         .container { max-width: 1100px; margin: 20px auto; padding: 0 15px; }
         .tab-content { display: none; }
         .tab-content.active { display: block; }
@@ -91,13 +79,13 @@
         .card { background: white; border-radius: 10px; padding: 25px; margin-bottom: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
         .card h2 { color: #1e3c72; border-bottom: 2px solid #eef2f5; padding-bottom: 10px; margin-bottom: 15px; }
 
-        /* Informasi Kelas */
+        /* INFORMASI KELAS */
         .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 15px; }
         .info-box { background: #ebf3fa; padding: 15px; border-left: 5px solid #2a5298; border-radius: 5px; }
         .info-box h4 { color: #1e3c72; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 5px; }
         .info-box p { font-size: 1.05rem; font-weight: bold; color: #2c3e50; }
 
-        /* Sub-Navigasi Galeri */
+        /* SUB-NAVIGASI GALERI */
         .sub-nav { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; border-bottom: 2px solid #ddd; padding-bottom: 10px; }
         .sub-nav button { background: #e0e6ed; border: none; padding: 8px 16px; border-radius: 20px; font-weight: 600; color: #4a5568; cursor: pointer; }
         .sub-nav button.active-sub { background: #2a5298; color: white; }
@@ -105,25 +93,25 @@
         .sub-content { display: none; }
         .sub-content.active-sub { display: block; }
 
-        /* Container Pemutar Video Universal */
+        /* PEMUTAR VIDEO */
         .video-container { position: relative; width: 100%; max-width: 360px; height: 500px; margin: 15px auto; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.15); background: #000; }
         .video-container iframe { position: absolute; top:0; left: 0; width: 100%; height: 100%; border: none; }
 
-        /* Grid Galeri Foto */
+        /* GRID GALERI FOTO */
         .grid-foto { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 15px; }
         .foto-item { border: 1px solid #e1e8ed; border-radius: 8px; overflow: hidden; background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
         .foto-item img { width: 100%; height: 230px; object-fit: cover; }
         .foto-caption { padding: 12px; font-size: 0.9rem; color: #333; text-align: center; font-weight: 600; }
 
-        /* Deskripsi Pembelajaran */
+        /* DESKRIPSI PEMBELAJARAN */
         .deskripsi-belajar { background: #f0f4f8; border-left: 4px solid #2a5298; padding: 12px 15px; margin: 10px 0 15px 0; border-radius: 0 6px 6px 0; font-size: 0.95rem; color: #2c3e50; }
 
-        /* Badge Tag */
+        /* BADGES */
         .badge { display: inline-block; background: #e3f2fd; color: #1565c0; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-bottom: 10px; }
         .badge-star { background: #fff3cd; color: #856404; }
         .badge-green { background: #e8f5e9; color: #2e7d32; }
 
-        /* Form Komentar WA Otomatis */
+        /* FORM WHATSAPP PRIVATE */
         .comment-section { background: #f8fafc; border-top: 2px dashed #cbd5e1; padding: 15px; margin-top: 15px; border-radius: 0 0 8px 8px; }
         .comment-section h4 { color: #1e3c72; font-size: 0.95rem; margin-bottom: 10px; }
         .form-group { margin-bottom: 10px; }
@@ -131,34 +119,28 @@
         .btn-kirim-wa { background: #25D366; color: white; border: none; padding: 10px 18px; border-radius: 5px; font-weight: bold; cursor: pointer; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 8px; }
         .btn-kirim-wa:hover { background: #1da851; }
 
-        /* Item Proyek Limbah MBG */
         .proyek-item { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 20px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
 
-        /* Footer */
+        /* PADLET CONTAINER */
+        .padlet-container { position: relative; width: 100%; height: 680px; border-radius: 12px; overflow: hidden; border: 1px solid #cbd5e1; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-top: 15px; }
+        .padlet-container iframe { width: 100%; height: 100%; border: none; }
+
+        /* FOOTER */
         footer { text-align: center; padding: 20px; background: #0f2027; color: white; font-size: 0.85rem; margin-top: 40px; }
 
-        /* Responsif Layar HP */
+        /* RESPONSIF HP */
         @media (max-width: 600px) {
-            .header-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            .header-text {
-                text-align: center;
-            }
-            .logo-img {
-                height: 80px;
-                width: 80px;
-            }
-            .header-text h1 {
-                font-size: 1.8rem;
-            }
+            .header-container { flex-direction: column; text-align: center; }
+            .header-text { text-align: center; }
+            .logo-img { height: 80px; width: 80px; }
+            .header-text h1 { font-size: 1.8rem; }
+            .padlet-container { height: 520px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER MODERN DENGAN LOGO SAMPING -->
+    <!-- HEADER UTAMA -->
     <header class="header-modern">
         <div class="header-container">
             <img src="logo.jpg" alt="Logo LENTERA 6" class="logo-img">
@@ -173,11 +155,12 @@
         SD Negeri 024184 Binjai • Ekosistem Portofolio & Transparansi Hasil Belajar Murid
     </div>
 
-    <!-- Navigasi 3 TAB UTAMA -->
+    <!-- NAVIGASI 4 TAB UTAMA -->
     <nav>
         <button class="tab-btn active" onclick="openTab('beranda')">Beranda</button>
         <button class="tab-btn" onclick="openTab('galeri')">Galeri Portofolio</button>
         <button class="tab-btn" onclick="openTab('teladan')">Siswa Teladan</button>
+        <button class="tab-btn" onclick="openTab('diskusi')">💬 Dinding Diskusi Ortu</button>
     </nav>
 
     <div class="container">
@@ -209,7 +192,7 @@
             <h2>Deskripsi Umum LENTERA 6</h2>
             <p><strong>LENTERA 6</strong> (<em>Laporan & Etalase Belajar Anak Kelas VI</em>) merupakan platform digital terpadu yang mendokumentasikan seluruh rekam jejak, unjuk kerja, karya literasi, dan projek pembelajaran siswa Kelas VI A SDN 024184 Binjai.</p>
             <br>
-            <p>Melalui ekosistem ini, proses belajar siswa disajikan secara terbuka. Orang tua/wali murid dapat melihat video unjuk kerja anak secara personal, memberikan tanggapan atau ucapan apresiasi pada tiap karya via WhatsApp, serta memantau perkembangan teladan siswa secara berkala.</p>
+            <p>Melalui ekosistem ini, orang tua/wali murid dapat melihat perkembangan putra-putrinya secara transparan, memberikan pesan apresiasi langsung di Dinding Diskusi, serta terhubung aktif dengan wali kelas.</p>
         </section>
 
 
@@ -218,7 +201,7 @@
             <h2>Galeri Portofolio Hasil Belajar Siswa</h2>
             <p style="margin-bottom: 15px; color: #555;">Pilih mata pelajaran / bidang portofolio di bawah ini:</p>
 
-            <!-- Sub Navigasi Mata Pelajaran -->
+            <!-- SUB NAVIGASI MATA PELAJARAN -->
             <div class="sub-nav">
                 <button class="sub-btn active-sub" onclick="openSubTab('bind')">🇮🇩 Bahasa Indonesia</button>
                 <button class="sub-btn" onclick="openSubTab('bing')">🇬🇧 Bahasa Inggris</button>
@@ -240,11 +223,11 @@
                     <iframe src="https://www.youtube-nocookie.com/embed/t66kZFYuLn4" allowfullscreen></iframe>
                 </div>
                 <div class="comment-section">
-                    <h4>💬 Kirim Apresiasi / Umpan Balik via WhatsApp:</h4>
+                    <h4>💬 Kirim Apresiasi Private via WhatsApp:</h4>
                     <form onsubmit="kirimWA(event, 'Bahasa Indonesia - Cerita Rakyat')">
                         <div class="form-group"><input type="text" class="nama-ortu" placeholder="Nama Orang Tua / Wali..." required></div>
-                        <div class="form-group"><textarea class="pesan-ortu" rows="2" placeholder="Tuliskan ucapan bangga / pesan untuk karya ini..." required></textarea></div>
-                        <button type="submit" class="btn-kirim-wa">📲 Kirim Apresiasi via WA Wali Kelas</button>
+                        <div class="form-group"><textarea class="pesan-ortu" rows="2" placeholder="Tuliskan ucapan bangga / pesan..." required></textarea></div>
+                        <button type="submit" class="btn-kirim-wa">📲 Kirim via WA Wali Kelas</button>
                     </form>
                 </div>
             </div>
@@ -260,11 +243,11 @@
                     <iframe src="https://www.youtube-nocookie.com/embed/2CKBrqYw6v8" allowfullscreen></iframe>
                 </div>
                 <div class="comment-section">
-                    <h4>💬 Kirim Apresiasi / Umpan Balik via WhatsApp:</h4>
+                    <h4>💬 Kirim Apresiasi Private via WhatsApp:</h4>
                     <form onsubmit="kirimWA(event, 'Bahasa Inggris - Game Subject & To Be')">
                         <div class="form-group"><input type="text" class="nama-ortu" placeholder="Nama Orang Tua / Wali..." required></div>
-                        <div class="form-group"><textarea class="pesan-ortu" rows="2" placeholder="Tuliskan ucapan bangga / pesan untuk karya ini..." required></textarea></div>
-                        <button type="submit" class="btn-kirim-wa">📲 Kirim Apresiasi via WA Wali Kelas</button>
+                        <div class="form-group"><textarea class="pesan-ortu" rows="2" placeholder="Tuliskan ucapan bangga / pesan..." required></textarea></div>
+                        <button type="submit" class="btn-kirim-wa">📲 Kirim via WA Wali Kelas</button>
                     </form>
                 </div>
             </div>
@@ -280,51 +263,29 @@
                     <iframe src="https://www.youtube-nocookie.com/embed/i5jJ7VS7Sfc" allowfullscreen></iframe>
                 </div>
                 <div class="comment-section">
-                    <h4>💬 Kirim Apresiasi / Umpan Balik via WhatsApp:</h4>
+                    <h4>💬 Kirim Apresiasi Private via WhatsApp:</h4>
                     <form onsubmit="kirimWA(event, 'Literasi Sains - Treasure Hunter Kota Respira')">
                         <div class="form-group"><input type="text" class="nama-ortu" placeholder="Nama Orang Tua / Wali..." required></div>
-                        <div class="form-group"><textarea class="pesan-ortu" rows="2" placeholder="Tuliskan ucapan bangga / pesan untuk karya ini..." required></textarea></div>
-                        <button type="submit" class="btn-kirim-wa">📲 Kirim Apresiasi via WA Wali Kelas</button>
+                        <div class="form-group"><textarea class="pesan-ortu" rows="2" placeholder="Tuliskan ucapan bangga / pesan..." required></textarea></div>
+                        <button type="submit" class="btn-kirim-wa">📲 Kirim via WA Wali Kelas</button>
                     </form>
                 </div>
             </div>
 
-            <!-- SUB-TAB 4: IPAS (2 PRAKTIKUM) -->
+            <!-- SUB-TAB 4: IPAS -->
             <div id="ipas" class="sub-content">
                 <span class="badge">IPAS - Praktikum 1</span>
                 <h3>Model Paru-Paru Manusia dari Bahan Bekas</h3>
-                <div class="deskripsi-belajar">
-                    Praktikum 1 membuat model paru-paru manusia dengan memanfaatkan bahan-bahan bekas di sekitar lingkungan rumah dan sekolah.
-                </div>
+                <div class="deskripsi-belajar">Praktikum 1 membuat model paru-paru manusia dengan memanfaatkan bahan-bahan bekas di sekitar lingkungan rumah dan sekolah.</div>
                 <div class="video-container">
                     <iframe src="https://www.youtube-nocookie.com/embed/aRej28D0bag" allowfullscreen></iframe>
                 </div>
-                <div class="comment-section">
-                    <h4>💬 Kirim Apresiasi IPAS Praktikum 1:</h4>
-                    <form onsubmit="kirimWA(event, 'IPAS Praktikum 1 - Model Paru-Paru')">
-                        <div class="form-group"><input type="text" class="nama-ortu" placeholder="Nama Orang Tua / Wali..." required></div>
-                        <div class="form-group"><textarea class="pesan-ortu" rows="2" placeholder="Tuliskan apresiasi Anda..." required></textarea></div>
-                        <button type="submit" class="btn-kirim-wa">📲 Kirim Apresiasi via WA Wali Kelas</button>
-                    </form>
-                </div>
-
                 <br><hr><br>
-
                 <span class="badge">IPAS - Praktikum 2</span>
                 <h3>Bahaya Merokok bagi Kesehatan Paru-Paru</h3>
-                <div class="deskripsi-belajar">
-                    Praktikum 2 tentang bahaya merokok pada kesehatan paru-paru.
-                </div>
+                <div class="deskripsi-belajar">Praktikum 2 tentang bahaya merokok pada kesehatan paru-paru.</div>
                 <div class="video-container">
                     <iframe src="https://www.youtube-nocookie.com/embed/5mK-zKZMuDE" allowfullscreen></iframe>
-                </div>
-                <div class="comment-section">
-                    <h4>💬 Kirim Apresiasi IPAS Praktikum 2:</h4>
-                    <form onsubmit="kirimWA(event, 'IPAS Praktikum 2 - Bahaya Merokok')">
-                        <div class="form-group"><input type="text" class="nama-ortu" placeholder="Nama Orang Tua / Wali..." required></div>
-                        <div class="form-group"><textarea class="pesan-ortu" rows="2" placeholder="Tuliskan apresiasi Anda..." required></textarea></div>
-                        <button type="submit" class="btn-kirim-wa">📲 Kirim Apresiasi via WA Wali Kelas</button>
-                    </form>
                 </div>
             </div>
 
@@ -333,59 +294,23 @@
                 <span class="badge">Seni & Budaya</span>
                 <h3>Unjuk Bakat P5 & Seni Kreativitas</h3>
                 <div class="deskripsi-belajar">
-                    Kreativitas siswa dalam berkarya dengan memanfaatkan bahan yang ada. Gerak dan Lagu, Tarian Batak Tradisional, Perkusi dengan ember bekas, dan Tarian Komando dengan memanfaatkan kardus bekas sebagai properti. Unjuk bakat ini wujud nyata semangat P5 yang berkebinekaan global, gotong royong, kreatif, dan peduli lingkungan.
+                    Kreativitas siswa dalam berkarya dengan memanfaatkan bahan yang ada. Gerak dan Lagu, Tarian Batak Tradisional, Perkusi dengan ember bekas, dan Tarian Komando dengan memanfaatkan kardus bekas sebagai properti.
                 </div>
                 <div class="video-container">
                     <iframe src="https://www.youtube-nocookie.com/embed/Ax6s-FrYX2Q" allowfullscreen></iframe>
                 </div>
-                <div class="comment-section">
-                    <h4>💬 Kirim Apresiasi / Umpan Balik via WhatsApp:</h4>
-                    <form onsubmit="kirimWA(event, 'Seni & Budaya - Unjuk Bakat P5')">
-                        <div class="form-group"><input type="text" class="nama-ortu" placeholder="Nama Orang Tua / Wali..." required></div>
-                        <div class="form-group"><textarea class="pesan-ortu" rows="2" placeholder="Tuliskan ucapan bangga / pesan untuk karya ini..." required></textarea></div>
-                        <button type="submit" class="btn-kirim-wa">📲 Kirim Apresiasi via WA Wali Kelas</button>
-                    </form>
-                </div>
             </div>
 
-            <!-- SUB-TAB 6: FOTO BELAJAR KELOMPOK -->
+            <!-- SUB-TAB 6: FOTO BELAJAR -->
             <div id="foto" class="sub-content">
                 <span class="badge">Galeri Foto</span>
                 <h3>Hasil Karya Model Paru-Paru Manusia</h3>
-                <div class="deskripsi-belajar">
-                    Dokumentasi kekompakan kerja kelompok siswa Kelas VI A saat menyelesaikan dan menampilkan <strong>Hasil Karya Model Paru-Paru Manusia</strong> (Kelompok 6 hingga Kelompok 1 & 2):
-                </div>
-                
                 <div class="grid-foto">
-                    <div class="foto-item">
-                        <img src="KELOMPOK 6.jpeg" alt="Kelompok 6">
-                        <div class="foto-caption">Aktivitas Belajar Kelompok 6</div>
-                    </div>
-                    <div class="foto-item">
-                        <img src="KELOMPOK 5.jpeg" alt="Kelompok 5">
-                        <div class="foto-caption">Aktivitas Belajar Kelompok 5</div>
-                    </div>
-                    <div class="foto-item">
-                        <img src="KELOMPOK 1 DAN 2.jpeg" alt="Kelompok 1 Dan 2">
-                        <div class="foto-caption">Aktivitas Belajar Kelompok 1 & 2</div>
-                    </div>
-                    <div class="foto-item">
-                        <img src="KELOMPOK 4.jpeg" alt="Kelompok 4">
-                        <div class="foto-caption">Aktivitas Belajar Kelompok 4</div>
-                    </div>
-                    <div class="foto-item">
-                        <img src="KEOLOMPOK 3.jpeg" alt="Kelompok 3">
-                        <div class="foto-caption">Aktivitas Belajar Kelompok 3</div>
-                    </div>
-                </div>
-
-                <div class="comment-section">
-                    <h4>💬 Kirim Apresiasi Foto Belajar Kelompok:</h4>
-                    <form onsubmit="kirimWA(event, 'Foto Belajar - Model Paru-Paru Manusia')">
-                        <div class="form-group"><input type="text" class="nama-ortu" placeholder="Nama Orang Tua / Wali..." required></div>
-                        <div class="form-group"><textarea class="pesan-ortu" rows="2" placeholder="Tuliskan pesan atau apresiasi untuk kerja kelompok siswa..." required></textarea></div>
-                        <button type="submit" class="btn-kirim-wa">📲 Kirim Apresiasi via WA Wali Kelas</button>
-                    </form>
+                    <div class="foto-item"><img src="KELOMPOK 6.jpeg" alt="Kelompok 6"><div class="foto-caption">Aktivitas Belajar Kelompok 6</div></div>
+                    <div class="foto-item"><img src="KELOMPOK 5.jpeg" alt="Kelompok 5"><div class="foto-caption">Aktivitas Belajar Kelompok 5</div></div>
+                    <div class="foto-item"><img src="KELOMPOK 1 DAN 2.jpeg" alt="Kelompok 1 Dan 2"><div class="foto-caption">Aktivitas Belajar Kelompok 1 & 2</div></div>
+                    <div class="foto-item"><img src="KELOMPOK 4.jpeg" alt="Kelompok 4"><div class="foto-caption">Aktivitas Belajar Kelompok 4</div></div>
+                    <div class="foto-item"><img src="KEOLOMPOK 3.jpeg" alt="Kelompok 3"><div class="foto-caption">Aktivitas Belajar Kelompok 3</div></div>
                 </div>
             </div>
 
@@ -393,108 +318,41 @@
             <div id="mbg" class="sub-content">
                 <span class="badge badge-green">Inovasi Lingkungan</span>
                 <h2>Proyek Pengolahan Limbah Makan Bergizi Gratis (MBG)</h2>
-                <p style="margin-bottom: 20px; color: #475569;">Inovasi dan aksi nyata siswa Kelas VI A dalam mendaur ulang serta mengolah limbah organik sisa Makan Bergizi Gratis menjadi produk bermanfaat:</p>
-
-                <!-- Proyek 1 -->
+                
                 <div class="proyek-item">
                     <span class="badge badge-green">Proyek 1</span>
                     <h3>Membuat Pembersih Organik dari Kulit Jeruk</h3>
-                    <div class="deskripsi-belajar">
-                        Mengolah sisa kulit jeruk dari menu MBG menjadi cairan pembersih organik alami yang ramah lingkungan dan wangi.
-                    </div>
-                    <div class="video-container">
-                        <iframe src="https://www.youtube-nocookie.com/embed/taVXDQnvth4" allowfullscreen></iframe>
-                    </div>
-                    <div class="comment-section">
-                        <h4>💬 Kirim Apresiasi Proyek 1:</h4>
-                        <form onsubmit="kirimWA(event, 'Proyek 1 Limbah MBG - Pembersih Organik Kulit Jeruk')">
-                            <div class="form-group"><input type="text" class="nama-ortu" placeholder="Nama Orang Tua / Wali..." required></div>
-                            <div class="form-group"><textarea class="pesan-ortu" rows="2" placeholder="Tuliskan ucapan apresiasi..." required></textarea></div>
-                            <button type="submit" class="btn-kirim-wa">📲 Kirim Apresiasi via WA Wali Kelas</button>
-                        </form>
-                    </div>
+                    <div class="deskripsi-belajar">Mengolah sisa kulit jeruk dari menu MBG menjadi cairan pembersih organik alami yang ramah lingkungan dan wangi.</div>
+                    <div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/taVXDQnvth4" allowfullscreen></iframe></div>
                 </div>
 
-                <!-- Proyek 2 -->
                 <div class="proyek-item">
                     <span class="badge badge-green">Proyek 2</span>
                     <h3>Pupuk Cair dari Sisa Sayur dan Buah</h3>
-                    <div class="deskripsi-belajar">
-                        Memanfatkan sisa potongan sayur dan buah dari program MBG untuk diolah menjadi Pupuk Organik Cair (POC) kaya nutrisi bagi tanaman sekolah.
-                    </div>
-                    <div class="video-container">
-                        <iframe src="https://www.youtube-nocookie.com/embed/yVtfB8LQ0cs" allowfullscreen></iframe>
-                    </div>
-                    <div class="comment-section">
-                        <h4>💬 Kirim Apresiasi Proyek 2:</h4>
-                        <form onsubmit="kirimWA(event, 'Proyek 2 Limbah MBG - Pupuk Cair Sayur & Buah')">
-                            <div class="form-group"><input type="text" class="nama-ortu" placeholder="Nama Orang Tua / Wali..." required></div>
-                            <div class="form-group"><textarea class="pesan-ortu" rows="2" placeholder="Tuliskan ucapan apresiasi..." required></textarea></div>
-                            <button type="submit" class="btn-kirim-wa">📲 Kirim Apresiasi via WA Wali Kelas</button>
-                        </form>
-                    </div>
+                    <div class="deskripsi-belajar">Memanfatkan sisa potongan sayur dan buah dari program MBG untuk diolah menjadi Pupuk Organik Cair (POC).</div>
+                    <div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/yVtfB8LQ0cs" allowfullscreen></iframe></div>
                 </div>
 
-                <!-- Proyek 3 -->
                 <div class="proyek-item">
                     <span class="badge badge-green">Proyek 3</span>
                     <h3>Membuat Tinta Cat dari Buah Naga</h3>
-                    <div class="deskripsi-belajar">
-                        Eksperimen memanfaatkan pigmen alami dari sisa kulit/daging buah naga MBG menjadi tinta dan cat pewarna alami untuk berkarya seni.
-                    </div>
-                    <div class="video-container">
-                        <iframe src="https://www.youtube-nocookie.com/embed/7kvyM7F2yII" allowfullscreen></iframe>
-                    </div>
-                    <div class="comment-section">
-                        <h4>💬 Kirim Apresiasi Proyek 3:</h4>
-                        <form onsubmit="kirimWA(event, 'Proyek 3 Limbah MBG - Tinta Cat Buah Naga')">
-                            <div class="form-group"><input type="text" class="nama-ortu" placeholder="Nama Orang Tua / Wali..." required></div>
-                            <div class="form-group"><textarea class="pesan-ortu" rows="2" placeholder="Tuliskan ucapan apresiasi..." required></textarea></div>
-                            <button type="submit" class="btn-kirim-wa">📲 Kirim Apresiasi via WA Wali Kelas</button>
-                        </form>
-                    </div>
+                    <div class="deskripsi-belajar">Eksperimen memanfaatkan pigmen alami dari sisa kulit/daging buah naga MBG menjadi tinta dan cat pewarna alami.</div>
+                    <div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/7kvyM7F2yII" allowfullscreen></iframe></div>
                 </div>
 
-                <!-- Proyek 4 -->
                 <div class="proyek-item">
                     <span class="badge badge-green">Proyek 4</span>
                     <h3>Mengubah Sisa Makanan Menjadi Pupuk Kompos</h3>
-                    <div class="deskripsi-belajar">
-                        Proses pengomposan sisa makanan organik MBG untuk mengurangi sampah serta menghasilkan pupuk kompos padat yang menyuburkan tanah.
-                    </div>
-                    <div class="video-container">
-                        <iframe src="https://www.youtube-nocookie.com/embed/ILtUQYkVtTU" allowfullscreen></iframe>
-                    </div>
-                    <div class="comment-section">
-                        <h4>💬 Kirim Apresiasi Proyek 4:</h4>
-                        <form onsubmit="kirimWA(event, 'Proyek 4 Limbah MBG - Pupuk Kompos Sisa Makanan')">
-                            <div class="form-group"><input type="text" class="nama-ortu" placeholder="Nama Orang Tua / Wali..." required></div>
-                            <div class="form-group"><textarea class="pesan-ortu" rows="2" placeholder="Tuliskan ucapan apresiasi..." required></textarea></div>
-                            <button type="submit" class="btn-kirim-wa">📲 Kirim Apresiasi via WA Wali Kelas</button>
-                        </form>
-                    </div>
+                    <div class="deskripsi-belajar">Proses pengomposan sisa makanan organik MBG untuk mengurangi sampah serta menghasilkan pupuk kompos padat.</div>
+                    <div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/ILtUQYkVtTU" allowfullscreen></iframe></div>
                 </div>
 
-                <!-- Proyek 5 -->
                 <div class="proyek-item">
                     <span class="badge badge-green">Proyek 5</span>
                     <h3>Membuat Lilin Aromaterapi dari Sisa Kulit Jeruk</h3>
-                    <div class="deskripsi-belajar">
-                        Inovasi pembuatan lilin aromaterapi memanfaatkan ekstrak minyak alami sisa kulit jeruk MBG yang memberikan aroma segar dan menenangkan.
-                    </div>
-                    <div class="video-container">
-                        <iframe src="https://www.youtube-nocookie.com/embed/RaKupB-Sl3c" allowfullscreen></iframe>
-                    </div>
-                    <div class="comment-section">
-                        <h4>💬 Kirim Apresiasi Proyek 5:</h4>
-                        <form onsubmit="kirimWA(event, 'Proyek 5 Limbah MBG - Lilin Aromaterapi Kulit Jeruk')">
-                            <div class="form-group"><input type="text" class="nama-ortu" placeholder="Nama Orang Tua / Wali..." required></div>
-                            <div class="form-group"><textarea class="pesan-ortu" rows="2" placeholder="Tuliskan ucapan apresiasi..." required></textarea></div>
-                            <button type="submit" class="btn-kirim-wa">📲 Kirim Apresiasi via WA Wali Kelas</button>
-                        </form>
-                    </div>
+                    <div class="deskripsi-belajar">Inovasi pembuatan lilin aromaterapi memanfaatkan ekstrak minyak alami sisa kulit jeruk MBG.</div>
+                    <div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/RaKupB-Sl3c" allowfullscreen></iframe></div>
                 </div>
-
             </div>
 
         </section>
@@ -503,60 +361,37 @@
         <!-- ==================== TAB 3: SISWA TELADAN ==================== -->
         <section id="teladan" class="tab-content card">
             <h2>Panggung Teladan Siswa Kelas VI A</h2>
-            <p style="margin-bottom: 20px;">Apresiasi khusus untuk merayakan kedisiplinan, pencapaian akademik, ketakwaan ibadah, dan karakter terpuji murid Kelas VI A:</p>
-
             <div class="grid-foto">
-                
-                <!-- Teladan Akademik -->
                 <div class="foto-item">
                     <img src="TELADAN AKADEMIK.jpeg" alt="Teladan Akademik">
-                    <div style="padding: 15px;">
-                        <span class="badge badge-star">🏆 Teladan Akademik</span>
-                        <h3>Pencapaian Akademik Terbaik</h3>
-                        <p style="font-size: 0.85rem; color: #555;">Apresiasi atas ketekunan belajar, keaktifan bernalar kritis, dan capaian nilai akademik tertinggi.</p>
-                    </div>
+                    <div style="padding: 15px;"><span class="badge badge-star">🏆 Teladan Akademik</span><h3>Pencapaian Akademik Terbaik</h3></div>
                 </div>
-
-                <!-- Teladan Ibadah -->
                 <div class="foto-item">
                     <img src="TELADAN IBADAH.jpeg" alt="Teladan Ibadah">
-                    <div style="padding: 15px;">
-                        <span class="badge badge-star">🌙 Teladan Ibadah</span>
-                        <h3>Ketakwaan & Kedisiplinan Ibadah</h3>
-                        <p style="font-size: 0.85rem; color: #555;">Penghargaan atas kedisiplinan dan kesadaran menjalankan ibadah harian secara konsisten.</p>
-                    </div>
+                    <div style="padding: 15px;"><span class="badge badge-star">🌙 Teladan Ibadah</span><h3>Ketakwaan & Kedisiplinan Ibadah</h3></div>
                 </div>
-
-                <!-- Teladan Sikap -->
                 <div class="foto-item">
                     <img src="TELADAN SIKAP.jpeg" alt="Teladan Sikap">
-                    <div style="padding: 15px;">
-                        <span class="badge badge-star">🌟 Teladan Sikap</span>
-                        <h3>Karakter Terpuji & Kesopanan</h3>
-                        <p style="font-size: 0.85rem; color: #555;">Apresiasi atas kepribadian yang santun, kepedulian antar sesama teman, dan sikap gotong royong.</p>
-                    </div>
+                    <div style="padding: 15px;"><span class="badge badge-star">🌟 Teladan Sikap</span><h3>Karakter Terpuji & Kesopanan</h3></div>
                 </div>
-
-                <!-- Kelompok Terbaik -->
                 <div class="foto-item">
                     <img src="KELOMPOK TERBAIK.jpeg" alt="Kelompok Terbaik">
-                    <div style="padding: 15px;">
-                        <span class="badge badge-star">🥇 Kelompok Terbaik</span>
-                        <h3>Kekompakan & Kerja Sama Terbaik</h3>
-                        <p style="font-size: 0.85rem; color: #555;">Penghargaan untuk tim kelompok paling solid, kreatif, dan saling mendukung dalam setiap tugas.</p>
-                    </div>
+                    <div style="padding: 15px;"><span class="badge badge-star">🥇 Kelompok Terbaik</span><h3>Kekompakan & Kerja Sama Terbaik</h3></div>
                 </div>
-
             </div>
+        </section>
 
-            <!-- Form Komentar Khusus Tab Teladan -->
-            <div class="comment-section" style="margin-top: 25px;">
-                <h4>💬 Kirim Ucapan Selamat & Apresiasi Orang Tua:</h4>
-                <form onsubmit="kirimWA(event, 'Apresiasi Panggung Siswa Teladan')">
-                    <div class="form-group"><input type="text" class="nama-ortu" placeholder="Nama Orang Tua / Wali..." required></div>
-                    <div class="form-group"><textarea class="pesan-ortu" rows="3" placeholder="Tuliskan ucapan selamat atau motivasi untuk para siswa teladan..." required></textarea></div>
-                    <button type="submit" class="btn-kirim-wa">📲 Kirim Apresiasi via WA Wali Kelas</button>
-                </form>
+
+        <!-- ==================== TAB 4: DINDING DISKUSI PADLET ==================== -->
+        <section id="diskusi" class="tab-content card">
+            <h2>💬 Dinding Apresiasi & Diskusi Orang Tua (Padlet)</h2>
+            <p style="margin-bottom: 10px; color: #475569;">
+                Orang tua/wali murid dapat menuliskan ucapan selamat, masukan, atau kesan pesan secara langsung di bawah ini. Tekan tombol <strong>`+`</strong> di dalam papan untuk menambah postingan baru.
+            </p>
+
+            <div class="padlet-container">
+                <!-- IFRAME PADLET RESMI MILIK ANDA -->
+                <iframe src="https://padlet.com/embed/s023tl398felri0anz9k" allow="camera; microphone; geolocation"></iframe>
             </div>
         </section>
 
@@ -566,9 +401,7 @@
         <p>&copy; 2026 LENTERA 6 — UPT SDN 024184 Binjai | Dikembangkan oleh Ersy Sumita, S.Pd.</p>
     </footer>
 
-    <!-- Script Logika Tab & WhatsApp Otomatis -->
     <script>
-        // Nomor WhatsApp Wali Kelas
         const NOMOR_WA_GURU = "6285830896558";
 
         function openTab(tabId) {
@@ -593,21 +426,16 @@
             event.currentTarget.classList.add('active-sub');
         }
 
-        // Fungsi Mengirim Pesan Terformat Langsung ke WhatsApp Guru
         function kirimWA(e, namaKarya) {
             e.preventDefault();
-            
             const form = e.target;
             const nama = form.querySelector('.nama-ortu').value;
             const pesan = form.querySelector('.pesan-ortu').value;
 
-            // Format Pesan WhatsApp
             const teksPesan = `Halo Bu Ersy, saya *${nama}* (Orang Tua / Wali Murid Kelas VI A).%0A%0AMemberikan umpan balik untuk karya: *${namaKarya}*%0A%0A*Pesan / Apresiasi:*%0A"${pesan}"%0A%0A_Dikirim melalui Portal LENTERA 6 SDN 024184 Binjai_`;
 
-            // Buka WhatsApp Otomatis
             const urlWA = `https://wa.me/${NOMOR_WA_GURU}?text=${teksPesan}`;
             window.open(urlWA, '_blank');
-            
             form.reset();
         }
     </script>
