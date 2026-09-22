@@ -121,6 +121,7 @@
         /* Badge Tag */
         .badge { display: inline-block; background: #e3f2fd; color: #1565c0; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-bottom: 10px; }
         .badge-star { background: #fff3cd; color: #856404; }
+        .badge-green { background: #e8f5e9; color: #2e7d32; }
 
         /* Form Komentar WA Otomatis */
         .comment-section { background: #f8fafc; border-top: 2px dashed #cbd5e1; padding: 15px; margin-top: 15px; border-radius: 0 0 8px 8px; }
@@ -129,6 +130,9 @@
         .form-group input, .form-group textarea { width: 100%; padding: 8px 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 0.9rem; }
         .btn-kirim-wa { background: #25D366; color: white; border: none; padding: 10px 18px; border-radius: 5px; font-weight: bold; cursor: pointer; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 8px; }
         .btn-kirim-wa:hover { background: #1da851; }
+
+        /* Item Proyek Limbah MBG */
+        .proyek-item { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 20px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
 
         /* Footer */
         footer { text-align: center; padding: 20px; background: #0f2027; color: white; font-size: 0.85rem; margin-top: 40px; }
@@ -222,7 +226,7 @@
                 <button class="sub-btn" onclick="openSubTab('ipas')">🔬 IPAS (2 Praktikum)</button>
                 <button class="sub-btn" onclick="openSubTab('seni')">🎨 Seni & Budaya</button>
                 <button class="sub-btn" onclick="openSubTab('foto')">📸 Foto Belajar Kelompok</button>
-                <button class="sub-btn" onclick="openSubTab('mbg')">🌱 Proyek Sampah MBG</button>
+                <button class="sub-btn" onclick="openSubTab('mbg')">🌱 Proyek Limbah MBG</button>
             </div>
 
             <!-- SUB-TAB 1: BAHASA INDONESIA -->
@@ -385,11 +389,112 @@
                 </div>
             </div>
 
-            <!-- SUB-TAB 7: PROYEK MBG -->
+            <!-- SUB-TAB 7: PROYEK LIMBAH MBG -->
             <div id="mbg" class="sub-content">
-                <span class="badge">Inovasi MBG</span>
-                <h3>Proyek Pengolahan Sampah MBG (HORAS)</h3>
-                <p><em>Dokumentasi proyek pengolahan sampah Makan Bergizi Gratis sedang disiapkan...</em></p>
+                <span class="badge badge-green">Inovasi Lingkungan</span>
+                <h2>Proyek Pengolahan Limbah Makan Bergizi Gratis (MBG)</h2>
+                <p style="margin-bottom: 20px; color: #475569;">Inovasi dan aksi nyata siswa Kelas VI A dalam mendaur ulang serta mengolah limbah organik sisa Makan Bergizi Gratis menjadi produk bermanfaat:</p>
+
+                <!-- Proyek 1 -->
+                <div class="proyek-item">
+                    <span class="badge badge-green">Proyek 1</span>
+                    <h3>Membuat Pembersih Organik dari Kulit Jeruk</h3>
+                    <div class="deskripsi-belajar">
+                        Mengolah sisa kulit jeruk dari menu MBG menjadi cairan pembersih organik alami yang ramah lingkungan dan wangi.
+                    </div>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube-nocookie.com/embed/taVXDQnvth4" allowfullscreen></iframe>
+                    </div>
+                    <div class="comment-section">
+                        <h4>💬 Kirim Apresiasi Proyek 1:</h4>
+                        <form onsubmit="kirimWA(event, 'Proyek 1 Limbah MBG - Pembersih Organik Kulit Jeruk')">
+                            <div class="form-group"><input type="text" class="nama-ortu" placeholder="Nama Orang Tua / Wali..." required></div>
+                            <div class="form-group"><textarea class="pesan-ortu" rows="2" placeholder="Tuliskan ucapan apresiasi..." required></textarea></div>
+                            <button type="submit" class="btn-kirim-wa">📲 Kirim Apresiasi via WA Wali Kelas</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Proyek 2 -->
+                <div class="proyek-item">
+                    <span class="badge badge-green">Proyek 2</span>
+                    <h3>Pupuk Cair dari Sisa Sayur dan Buah</h3>
+                    <div class="deskripsi-belajar">
+                        Memanfatkan sisa potongan sayur dan buah dari program MBG untuk diolah menjadi Pupuk Organik Cair (POC) kaya nutrisi bagi tanaman sekolah.
+                    </div>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube-nocookie.com/embed/yVtfB8LQ0cs" allowfullscreen></iframe>
+                    </div>
+                    <div class="comment-section">
+                        <h4>💬 Kirim Apresiasi Proyek 2:</h4>
+                        <form onsubmit="kirimWA(event, 'Proyek 2 Limbah MBG - Pupuk Cair Sayur & Buah')">
+                            <div class="form-group"><input type="text" class="nama-ortu" placeholder="Nama Orang Tua / Wali..." required></div>
+                            <div class="form-group"><textarea class="pesan-ortu" rows="2" placeholder="Tuliskan ucapan apresiasi..." required></textarea></div>
+                            <button type="submit" class="btn-kirim-wa">📲 Kirim Apresiasi via WA Wali Kelas</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Proyek 3 -->
+                <div class="proyek-item">
+                    <span class="badge badge-green">Proyek 3</span>
+                    <h3>Membuat Tinta Cat dari Buah Naga</h3>
+                    <div class="deskripsi-belajar">
+                        Eksperimen memanfaatkan pigmen alami dari sisa kulit/daging buah naga MBG menjadi tinta dan cat pewarna alami untuk berkarya seni.
+                    </div>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube-nocookie.com/embed/7kvyM7F2yII" allowfullscreen></iframe>
+                    </div>
+                    <div class="comment-section">
+                        <h4>💬 Kirim Apresiasi Proyek 3:</h4>
+                        <form onsubmit="kirimWA(event, 'Proyek 3 Limbah MBG - Tinta Cat Buah Naga')">
+                            <div class="form-group"><input type="text" class="nama-ortu" placeholder="Nama Orang Tua / Wali..." required></div>
+                            <div class="form-group"><textarea class="pesan-ortu" rows="2" placeholder="Tuliskan ucapan apresiasi..." required></textarea></div>
+                            <button type="submit" class="btn-kirim-wa">📲 Kirim Apresiasi via WA Wali Kelas</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Proyek 4 -->
+                <div class="proyek-item">
+                    <span class="badge badge-green">Proyek 4</span>
+                    <h3>Mengubah Sisa Makanan Menjadi Pupuk Kompos</h3>
+                    <div class="deskripsi-belajar">
+                        Proses pengomposan sisa makanan organik MBG untuk mengurangi sampah serta menghasilkan pupuk kompos padat yang menyuburkan tanah.
+                    </div>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube-nocookie.com/embed/ILtUQYkVtTU" allowfullscreen></iframe>
+                    </div>
+                    <div class="comment-section">
+                        <h4>💬 Kirim Apresiasi Proyek 4:</h4>
+                        <form onsubmit="kirimWA(event, 'Proyek 4 Limbah MBG - Pupuk Kompos Sisa Makanan')">
+                            <div class="form-group"><input type="text" class="nama-ortu" placeholder="Nama Orang Tua / Wali..." required></div>
+                            <div class="form-group"><textarea class="pesan-ortu" rows="2" placeholder="Tuliskan ucapan apresiasi..." required></textarea></div>
+                            <button type="submit" class="btn-kirim-wa">📲 Kirim Apresiasi via WA Wali Kelas</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Proyek 5 -->
+                <div class="proyek-item">
+                    <span class="badge badge-green">Proyek 5</span>
+                    <h3>Membuat Lilin Aromaterapi dari Sisa Kulit Jeruk</h3>
+                    <div class="deskripsi-belajar">
+                        Inovasi pembuatan lilin aromaterapi memanfaatkan ekstrak minyak alami sisa kulit jeruk MBG yang memberikan aroma segar dan menenangkan.
+                    </div>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube-nocookie.com/embed/RaKupB-Sl3c" allowfullscreen></iframe>
+                    </div>
+                    <div class="comment-section">
+                        <h4>💬 Kirim Apresiasi Proyek 5:</h4>
+                        <form onsubmit="kirimWA(event, 'Proyek 5 Limbah MBG - Lilin Aromaterapi Kulit Jeruk')">
+                            <div class="form-group"><input type="text" class="nama-ortu" placeholder="Nama Orang Tua / Wali..." required></div>
+                            <div class="form-group"><textarea class="pesan-ortu" rows="2" placeholder="Tuliskan ucapan apresiasi..." required></textarea></div>
+                            <button type="submit" class="btn-kirim-wa">📲 Kirim Apresiasi via WA Wali Kelas</button>
+                        </form>
+                    </div>
+                </div>
+
             </div>
 
         </section>
